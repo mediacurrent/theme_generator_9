@@ -167,38 +167,6 @@ module.exports = class extends Generator {
       this.destinationPath('src/patterns/components')
     );
     this.fs.copy(
-      this.templatePath('_helper-components/icons'),
-      this.destinationPath('src/patterns/components/icons')
-    );
-    this.fs.copyTpl(
-      this.templatePath('_helper-components/icons/icons.md'),
-      this.destinationPath('src/patterns/components/icons/icons.md'),
-      {
-        themeNameMachine: this.themeNameMachine
-      }
-    );
-    this.fs.copyTpl(
-      this.templatePath('_helper-components/icons/icons.twig'),
-      this.destinationPath('src/patterns/components/icons/icons.twig'),
-      {
-        themeNameMachine: this.themeNameMachine
-      }
-    );
-    this.fs.copyTpl(
-      this.templatePath('_helper-components/icons/icons-macro.twig'),
-      this.destinationPath('src/patterns/components/icons/icons-macro.twig'),
-      {
-        themeNameMachine: this.themeNameMachine
-      }
-    );
-    this.fs.copyTpl(
-      this.templatePath('_helper-components/icons/icons-macro.md'),
-      this.destinationPath('src/patterns/components/icons/icons-macro.md'),
-      {
-        themeNameMachine: this.themeNameMachine
-      }
-    );
-    this.fs.copy(
       this.templatePath('_src/patterns/layout/.gitkeep'),
       this.destinationPath('src/patterns/layout/.gitkeep')
     );

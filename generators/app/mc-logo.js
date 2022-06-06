@@ -21,7 +21,7 @@ chalk.blue("\n              cNMMMMM0'         .xMMMMMMWl          :NMMMMMK,") +
 chalk.blue("\n            .:0MMMMMMWx'.      .oXMMMMMMMK:.      .;OWMMMMMWk,.") +
 chalk.blue("\n         .cox0KKKKKKKKKOdl. .:dk0KKKKKKKKK0xo;  'odOKKKKKKKKKOdo:.") +
 chalk.blue("\n          ................   ................    ...............") +
-"\n              Welcome to the " + chalk.blue('Mediacurrent D8 theme') + " generator!" +
+"\n              Welcome to the " + chalk.blue('Mediacurrent D9 theme') + " generator!" +
 "\n ";
 
 module.exports = mcLogo;
