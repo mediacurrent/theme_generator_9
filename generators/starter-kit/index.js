@@ -181,7 +181,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       // are selected.
       // card-list requires card
       if (props.howMuchTheme.includes('card-list')) {
-        props.howMuchTheme.push('card', 'eyebrow', 'heading');
+        props.howMuchTheme.push('card');
       }
       
       // props.howMuchTheme is an array of all selected options.
