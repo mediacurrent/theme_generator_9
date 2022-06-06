@@ -290,40 +290,40 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     // If `carousel` is selected, attempt to link up the slick
     // carousel dependency. It'll still be up to the user to add SlickJS
     // as a project dependency.
-    if (this.exampleComponents.indexOf('carousel') !== -1) {
-      // If a carousel third party library is required, add it to Pattern Lab
-      // so it works there.
-      replace({
-        files: this.destinationPath('src/styleguide/meta/_00-head.twig'),
-        from: /<!-- Vendor CSS placeholder -->/g,
-        to: '<link rel="stylesheet" href="/libraries/slick-carousel/slick/slick.css" media="all" />'
-      })
-        .catch(() => {
-          this.log('Failed to append slick css to Pattern Lab file styleguide/meta/_00-head.twig');
-        });
-      replace({
-        files: this.destinationPath('src/styleguide/meta/_01-foot.twig'),
-        from: /<!-- Vendor JS placeholder -->/g,
-        to: '<script src="/libraries/slick-carousel/slick/slick.min.js"></script>'
-      })
-        .catch(() => {
-          this.log('Failed to append slick js to Pattern Lab file styleguide/meta/_01-foot.twig');
-        });
-    }
+    // if (this.exampleComponents.indexOf('carousel') !== -1) {
+    //   // If a carousel third party library is required, add it to Pattern Lab
+    //   // so it works there.
+    //   replace({
+    //     files: this.destinationPath('src/styleguide/meta/_00-head.twig'),
+    //     from: /<!-- Vendor CSS placeholder -->/g,
+    //     to: '<link rel="stylesheet" href="/libraries/slick-carousel/slick/slick.css" media="all" />'
+    //   })
+    //     .catch(() => {
+    //       this.log('Failed to append slick css to Pattern Lab file styleguide/meta/_00-head.twig');
+    //     });
+    //   replace({
+    //     files: this.destinationPath('src/styleguide/meta/_01-foot.twig'),
+    //     from: /<!-- Vendor JS placeholder -->/g,
+    //     to: '<script src="/libraries/slick-carousel/slick/slick.min.js"></script>'
+    //   })
+    //     .catch(() => {
+    //       this.log('Failed to append slick js to Pattern Lab file styleguide/meta/_01-foot.twig');
+    //     });
+    // }
   }
 
   end() {
     // If `carousel` is selected, inform the user that they need to install
     // the SlickJS carousel dependency.
-    if (this.exampleComponents.indexOf('carousel') !== -1) {
-      this.log('------------------------------------------------------------');
-      this.log('👋 You installed the Carousel component which requires SlickJS.');
-      this.log('Install SlickJS using composer with:');
-      this.log('composer require npm-asset/slick-carousel --working-dir=../../../../');
-      this.log('OR');
-      this.log(`Manually add Slick to the /libraries folder and update the carousel library in the ${this.themeNameMachine}.libraries.yml file.`);
-      this.log('https://github.com/kenwheeler/slick/');
-      this.log('------------------------------------------------------------');
-    }
+    // if (this.exampleComponents.indexOf('carousel') !== -1) {
+    //   this.log('------------------------------------------------------------');
+    //   this.log('👋 You installed the Carousel component which requires SlickJS.');
+    //   this.log('Install SlickJS using composer with:');
+    //   this.log('composer require npm-asset/slick-carousel --working-dir=../../../../');
+    //   this.log('OR');
+    //   this.log(`Manually add Slick to the /libraries folder and update the carousel library in the ${this.themeNameMachine}.libraries.yml file.`);
+    //   this.log('https://github.com/kenwheeler/slick/');
+    //   this.log('------------------------------------------------------------');
+    // }
   }
 };
