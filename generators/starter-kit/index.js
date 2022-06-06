@@ -45,45 +45,98 @@ module.exports = class extends Generator {
             name: 'Accordion'
           },
           {
-            value: 'button',
-            name: 'Button'
+            value: 'breadcrumb',
+            name: 'Breadcrumb'
           },
           {
             value: 'card',
-            name: 'Card (Depends on Eyebrow and Heading components.)'
+            name: 'Card'
           },
           {
             value: 'card-list',
-            name: 'Card List (Depends on Card, Eyebrow and Heading components.)'
+            name: 'Card List (depends on Card)'
           },
+          
           {
             value: 'carousel',
-            name: 'Carousel (Depends on Heading, Media and Button components.)'
+            name: 'Carousel Slider'
           },
           {
-            value: 'eyebrow',
-            name: 'Eyebrow'
+            value: 'gallery-carousel',
+            name: 'Gallery Carousel'
           },
           {
-            value: 'heading',
-            name: 'Heading'
+            value: 'gallery-lightbox',
+            name: 'Gallery + Lightbox'
           },
           {
             value: 'hero',
-            name: 'Hero (Depends on Heading, Media and Button components.)'
+            name: 'Hero'
           },
           {
-            value: 'media-item',
+            value: 'latest-news',
+            name: 'Latest News'
+          },
+          {
+            value: 'main-menu',
+            name: 'Main Menu'
+          },
+          {
+            value: 'map',
+            name: 'Map'
+          },
+          {
+            value: 'media',
             name: 'Media'
           },
           {
             value: 'message',
-            name: 'Drupal Messages'
+            name: 'Messages'
+          },
+          {
+            value: 'page-title',
+            name: 'Page Title'
+          },
+          {
+            value: 'pager',
+            name: 'Pager'
+          },
+          {
+            value: 'quote',
+            name: 'Quote'
+          },
+          {
+            value: 'search-api-results',
+            name: 'Search API Results'
+          },
+          {
+            value: 'search-box',
+            name: 'Search Box'
+          },
+          {
+            value: 'site-branding',
+            name: 'Site Branding'
+          },
+          {
+            value: 'site-header',
+            name: 'Site Header'
+          },
+          {
+            value: 'social-menu',
+            name: 'Social Menu'
           },
           {
             value: 'tabs',
-            name: 'Drupal Tabs'
-          }
+            name: 'Tabs'
+          },
+          {
+            value: 'teaser',
+            name: 'Teaser'
+          },
+          {
+            value: 'utility-nav',
+            name: 'Utility Nav / Account'
+          },
         ]
       }
     ];
