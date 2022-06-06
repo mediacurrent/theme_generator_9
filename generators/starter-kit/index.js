@@ -177,6 +177,18 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       // the user provided theme machine name.
       this.themeNameMachine = this.themeNameMachine || props.themeNameMachine;
 
+      // Push base components.
+      props.howMuchTheme.push('body-text');
+      props.howMuchTheme.push('button');
+      props.howMuchTheme.push('eyebrow');
+      props.howMuchTheme.push('heading');
+      props.howMuchTheme.push('hidden');
+      props.howMuchTheme.push('icons');
+      props.howMuchTheme.push('l-flex');
+      props.howMuchTheme.push('menu');
+      props.howMuchTheme.push('page-layout');
+      props.howMuchTheme.push('site-footer');
+
       // Check to see if any of the components that need dependencies
       // are selected.
       // card-list requires card
