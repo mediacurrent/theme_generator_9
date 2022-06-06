@@ -26,26 +26,27 @@
     "not dead"
   ],
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@pattern-lab/core": "^5.7.0",
+    "@pattern-lab/engine-twig-php": "^5.7.1",
+    "@pattern-lab/uikit-workshop": "^5.7.1",
     "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
+    "del": "^4.1.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-babel": "^8.0.0",
-    "gulp-changed": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^6.0.0",
-    "gulp-imagemin": "^6.1.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-imagemin": "^6.0.0",
     "gulp-order": "^1.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-stylelint": "^11.0.0",
-    "prettier-eslint": "^9.0.1",
-    "sass": "^1.32.8",
-    "stylelint": "^13.12.0",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-scss": "^3.19.0"
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "browserslist": "^4.16.3",
+    "caniuse-lite": "^1.0.30001197"
   }
 }
