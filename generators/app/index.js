@@ -163,8 +163,8 @@ module.exports = class extends Generator {
       this.destinationPath('src/patterns/global')
     );
     this.fs.copy(
-      this.templatePath('_src/patterns/components'),
-      this.destinationPath('src/patterns/components')
+      this.templatePath('_src/patterns/components/.gitkeep'),
+      this.destinationPath('src/patterns/components/.gitkeep')
     );
     this.fs.copy(
       this.templatePath('_src/patterns/layout/.gitkeep'),
