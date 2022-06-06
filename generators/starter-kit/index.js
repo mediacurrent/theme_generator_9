@@ -179,21 +179,11 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
 
       // Check to see if any of the components that need dependencies
       // are selected.
-      // card requires eyebrow, heading
-      if (props.howMuchTheme.includes('card')) {
-        props.howMuchTheme.push('eyebrow', 'heading');
-      }
-      // card-list requires card, eyebrow, heading
+      // card-list requires card
       if (props.howMuchTheme.includes('card-list')) {
         props.howMuchTheme.push('card', 'eyebrow', 'heading');
       }
-      // carousel OR hero requires heading, media, button
-      if (
-        props.howMuchTheme.includes('carousel') ||
-        props.howMuchTheme.includes('hero')
-      ) {
-        props.howMuchTheme.push('heading', 'media-item', 'button');
-      }
+      
       // props.howMuchTheme is an array of all selected options.
       // i.e. [ 'hero', 'tabs', 'messages' ]
       // Remove any duplicate components using uniq().

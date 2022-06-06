@@ -16,7 +16,7 @@ module.exports = async function buildComponents({
   // with data for any selected example components.
   // eslint-disable-next-line max-len
   return await Promise.all(exampleComponents.map(async (component) => {
-    // Copy the selected example component into the theme.
+    // Copy the selected component into the theme.
     // Exclude the templates folder, it needs to go in a different directory.
     app.fs.copyTpl(
       [
@@ -32,14 +32,16 @@ module.exports = async function buildComponents({
 
     // Copy the twig template, passing in the themeMachineName
     // so it can be used as a twig namespace.
-    app.fs.copyTpl(
-      app.templatePath(`${component}/${component}.twig`),
-      // eslint-disable-next-line max-len
-      app.destinationPath(`src/patterns/components/${component}/${component}.twig`),
-      {
-        themeNameMachine: app.themeNameMachine
-      }
-    );
+    if (fs.existsSync(`${component}/${component}.twig`)) {
+      app.fs.copyTpl(
+        app.templatePath(`${component}/${component}.twig`),
+        // eslint-disable-next-line max-len
+        app.destinationPath(`src/patterns/components/${component}/${component}.twig`),
+        {
+          themeNameMachine: app.themeNameMachine
+        }
+      );
+    }
 
     // Copy any Drupal templates into the templates directory.
     fs.readdir(
@@ -63,7 +65,7 @@ module.exports = async function buildComponents({
       }
     );
 
-    // Check to see if the example component contains a JS file.
+    // Check to see if the component contains a JS file.
     const jsFile = app.templatePath(`${component}/${component}.js`);
     try {
       await fsPromises.access(jsFile, fs.constants.F_OK);
