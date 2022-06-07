@@ -225,7 +225,7 @@ Provided by default are seven npm scripts that point to Gulp tasks. We run gulp 
 
 ## Links
 
-- [`.stylelintrc.yml`](generators/app/templates/stylelintrc.yml)
+- [`.sass-lint.yml`](generators/app/templates/.sass-lint.yml)
 - [`.eslintrc.json`](generators/app/templates/eslintrc.json)
 
 ## Contributing

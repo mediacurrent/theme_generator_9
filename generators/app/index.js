@@ -146,8 +146,8 @@ module.exports = class extends Generator {
       this.destinationPath('.eslintrc.json')
     );
     this.fs.copy(
-      this.templatePath('stylelintrc.yml'),
-      this.destinationPath('.stylelintrc.yml')
+      this.templatePath('.sass-lint.yml'),
+      this.destinationPath('.sass-lint.yml')
     );
     // We need the theme machine name so we can set
     // correct namespaces.
