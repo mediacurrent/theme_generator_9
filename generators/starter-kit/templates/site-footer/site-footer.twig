@@ -36,7 +36,7 @@
   </div>
   <div class="site-footer__addendum">
     <div class="site-footer__inner">
-      {{ '&copy; '|convert_encoding('UTF-8', 'HTML-ENTITIES') ~ "now"|date("Y")}}, {{ copyright }}
+      {{ "&copy; " ~ "now"|date("Y")}}, {{ copyright }}
       {% if menu_items %}
         {%
           include '@<%= themeNameMachine %>/menu/menu.twig' with
