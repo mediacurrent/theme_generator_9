@@ -52,44 +52,15 @@ module.exports = async function buildComponents({
       }
     );
 
-    // Check to see if the component contains a JS file.
-    const jsFile = app.templatePath(`${component}/${component}.js`);
-    try {
-      await fsPromises.access(jsFile, fs.constants.F_OK);
-
-      // If there's a JS file in the example component, add it to the
-      // library.
-
-      // Add in additional dependencies OR provide a basic fallback for
-      // components with JS files.
-      return addDependency(component, app.themeNameMachine) || {
-        [component]: {
-          css: {
-            component: {
-              [`dist/css/${component}.css`]: {}
-            }
-          },
-          js: {
-            [`dist/js/${component}.js`]: {}
-          },
-          dependencies: [
-            'core/drupal',
-            'core/jquery'
-          ]
-        }
-      };
-    }
-    // If there's no JS file, only add the css.
-    catch (error) {
-      return {
-        [component]: {
-          css: {
-            component: {
-              [`dist/css/${component}.css`]: {}
-            }
+    // Look for additional dependencies or default to CSS.
+    return addDependency(component, app.themeNameMachine) || {
+      [component]: {
+        css: {
+          component: {
+            [`dist/css/${component}.css`]: {}
           }
         }
-      };
-    }
+      }
+    };
   }));
 };

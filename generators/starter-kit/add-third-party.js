@@ -37,7 +37,7 @@ module.exports = function addThirdParty(libraries) {
     libraries.push(slick);
   }
   // If colorbox hasn't been added yet and it's needed, add it.
-  else if (!containsColorbox && containsGalleryLightbox) {
+  if (!containsColorbox && containsGalleryLightbox) {
     const colorbox = {
       ['colorbox']: {
         css: {

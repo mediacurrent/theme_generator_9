@@ -51,6 +51,24 @@ module.exports = function addDependency (component, themeNameMachine) {
       }
     };
   }
+   // Gallery Carousel depends on Slick.
+   if (component === 'gallery-carousel') {
+    libraries = {
+      [component]: {
+        css: {
+          component: {
+            [`dist/css/${component}.css`]: {}
+          }
+        },
+        js: {
+          [`dist/js/${component}.es6.js`]: {}
+        },
+        dependencies: [
+          `${themeNameMachine}/slick`
+        ]
+      }
+    };
+  }
   // Gallery Lightbox depends on Colorbox.
   if (component === 'gallery-lightbox') {
     libraries = {
