@@ -82,7 +82,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'fontawesome',
-            name: 'Fontawesome'
+            name: 'Font Awesome'
           },
           {
             value: 'gallery-carousel',
@@ -127,6 +127,14 @@ module.exports = class extends Generator {
           {
             value: 'message',
             name: 'Messages'
+          },
+          {
+            value: 'node',
+            name: 'Node Templates'
+          },
+          {
+            value: 'page-layout',
+            name: 'Page Layout (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Site Footer, Utility Nav)'
           },
           {
             value: 'page-title',
