@@ -267,7 +267,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
         props.howMuchTheme.push('eyebrow');
       }
       if (props.howMuchTheme.includes('page-layout')) {
-        props.howMuchTheme.push('breadcrumb, l-flex, main-menu, site-branding, site-footer, utility-nav');
+        props.howMuchTheme.push('breadcrumb', 'l-flex', 'main-menu', 'site-branding', 'site-footer', 'utility-nav');
       }
       if (props.howMuchTheme.includes('page-title')) {
         props.howMuchTheme.push('heading');
@@ -279,7 +279,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
         props.howMuchTheme.push('icons');
       }
       if (props.howMuchTheme.includes('site-footer')) {
-        props.howMuchTheme.push('body-text, menu, site-branding, social-menu, utility-nav');
+        props.howMuchTheme.push('body-text', 'menu', 'site-branding', 'social-menu', 'utility-nav');
       }
       if (props.howMuchTheme.includes('site-header')) {
         props.howMuchTheme.push('breaker', 'l-flex', 'main-menu', 'utility-nav', 'site-branding');
