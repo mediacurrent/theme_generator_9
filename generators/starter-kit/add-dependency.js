@@ -19,7 +19,7 @@ module.exports = function addDependency (component, themeNameMachine) {
   }
   // If this is the carousel component, it needs SlickJS added
   // as a dependency.
-  else if (component === 'carousel') {
+  if (component === 'carousel') {
     libraries = {
       [component]: {
         css: {
@@ -37,7 +37,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Card List depends on Card.
-  else if (component === 'card-list') {
+  if (component === 'card-list') {
     libraries = {
       [component]: {
         css: {
@@ -52,7 +52,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Gallery Lightbox depends on Colorbox.
-  else if (component === 'gallery-lightbox') {
+  if (component === 'gallery-lightbox') {
     libraries = {
       [component]: {
         css: {
@@ -70,7 +70,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Main-menu has several JS dependencies.
-  else if (component === 'main-menu') {
+  if (component === 'main-menu') {
     libraries = {
       [component]: {
         css: {
@@ -91,7 +91,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Site-header depends on L-Flex.
-  else if (component === 'site-header') {
+  if (component === 'site-header') {
     libraries = {
       [component]: {
         css: {
