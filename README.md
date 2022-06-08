@@ -109,20 +109,29 @@ The following is supported by your new theme.
 
 ### Starter Kit
 
-The theme generator allows you to (optionally) add example components.
+The theme generator allows you to (optionally) add example components / templates.
 
 - Accordion
+- Body Text
 - Breadcrumb
+- Breaker
+- Button
 - Card
 - Card List
 - Carousel
+- Embed
+- Eyebrow
+- Fontawesome
 - Gallery Carousel
 - Gallery + Lightbox
+- Heading
 - Hero
 - Latest News
+- L-Flex
 - Main Menu
 - Map
 - Media
+- Menu
 - Messages
 - Page Title
 - Pager
@@ -135,6 +144,7 @@ The theme generator allows you to (optionally) add example components.
 - Tabs
 - Teaser
 - Utility Nav / Account
+- Views
 
 These can include both component and Drupal templates that are added to the appropriate place during theme generation. Your theme.libraries.yml is also updated to include the relevant libraries.
 

@@ -113,16 +113,16 @@ module.exports = class extends Generator {
             name: 'Main Menu'
           },
           {
-            value: 'menu',
-            name: 'Menu'
-          },
-          {
             value: 'map',
             name: 'Map (dependencies: Eyebrow)'
           },
           {
             value: 'media',
             name: 'Media (dependencies: Heading, Media)'
+          },
+          {
+            value: 'menu',
+            name: 'Menu'
           },
           {
             value: 'message',
