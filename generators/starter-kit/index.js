@@ -161,8 +161,12 @@ module.exports = class extends Generator {
             name: 'Site Branding'
           },
           {
+            value: 'site-footer',
+            name: 'Site Footer (dependencies: Body Text, Menu, Site Branding, Social Menu, Utility Nav)'
+          },
+          {
             value: 'site-header',
-            name: 'Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Utility Nav, Site Branding)'
+            name: 'Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Utility Nav)'
           },
           {
             value: 'social-menu',
@@ -262,6 +266,9 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       if (props.howMuchTheme.includes('media')) {
         props.howMuchTheme.push('eyebrow');
       }
+      if (props.howMuchTheme.includes('page-layout')) {
+        props.howMuchTheme.push('breadcrumb, l-flex, main-menu, site-branding, site-footer, utility-nav');
+      }
       if (props.howMuchTheme.includes('page-title')) {
         props.howMuchTheme.push('heading');
       }
@@ -270,6 +277,9 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       }
       if (props.howMuchTheme.includes('search-box')) {
         props.howMuchTheme.push('icons');
+      }
+      if (props.howMuchTheme.includes('site-footer')) {
+        props.howMuchTheme.push('body-text, menu, site-branding, social-menu, utility-nav');
       }
       if (props.howMuchTheme.includes('site-header')) {
         props.howMuchTheme.push('breaker', 'l-flex', 'main-menu', 'utility-nav', 'site-branding');

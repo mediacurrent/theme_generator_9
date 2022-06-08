@@ -45,12 +45,12 @@ module.exports = class extends Generator {
         message: 'Which base theme would you like to use? If you don\'t want to use a base theme pick "stable" as that\'s what\'s used by Drupal if you don\'t specify a base.',
         choices: [
           {
-            value: 'stable',
-            name: 'Use Stable as a base theme'
-          },
-          {
             value: 'classy',
             name: 'Use Classy as a base theme'
+          },
+          {
+            value: 'stable',
+            name: 'Use Stable as a base theme'
           }
         ]
       },
