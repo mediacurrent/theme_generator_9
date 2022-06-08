@@ -2,9 +2,24 @@
 module.exports = function addDependency (component, themeNameMachine) {
   let libraries = {};
 
+  // Accordion uses an es6.js library.
+  if (component === 'accordion') {
+    libraries = {
+      [component]: {
+        css: {
+          component: {
+            [`dist/css/${component}.css`]: {}
+          }
+        },
+        js: {
+          [`dist/js/${component}.es6.js`]: {}
+        }
+      }
+    };
+  }
   // If this is the carousel component, it needs SlickJS added
   // as a dependency.
-  if (component === 'carousel') {
+  else if (component === 'carousel') {
     libraries = {
       [component]: {
         css: {
@@ -37,7 +52,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Gallery Lightbox depends on Colorbox.
-  if (component === 'gallery-lightbox') {
+  else if (component === 'gallery-lightbox') {
     libraries = {
       [component]: {
         css: {
@@ -55,7 +70,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Main-menu has several JS dependencies.
-  if (component === 'main-menu') {
+  else if (component === 'main-menu') {
     libraries = {
       [component]: {
         css: {
@@ -76,7 +91,7 @@ module.exports = function addDependency (component, themeNameMachine) {
     };
   }
   // Site-header depends on L-Flex.
-  if (component === 'site-header') {
+  else if (component === 'site-header') {
     libraries = {
       [component]: {
         css: {
