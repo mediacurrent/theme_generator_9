@@ -6,7 +6,7 @@
     {% block carousel_items %}
       {% for item in list %}
         {%
-          include '@<%= themeNameMachine %>/carousel/_carousel-item.twig' with {
+          include '@<%= themeNameMachine %>/carousel/carousel-item.twig' with {
             "item": item
           } only
         %}

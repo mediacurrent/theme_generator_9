@@ -1,23 +1,22 @@
-/*eslint strict: ["error", "global"]*/
-'use strict';
-
 // Include gulp
 const { src, dest } = require('gulp');
 
 // Include Our Plugins.
 var concat = require('gulp-concat');
 var order = require('gulp-order');
+var sourcemaps = require('gulp-sourcemaps');
 
 // Export our tasks.
 module.exports = {
   // Concat all CSS into a master bundle.
-  concatCSS: function() {
+  concatCSS: function () {
     return (
       src([
         './dist/css/*.css',
         '!./dist/css/all.css',
         '!./dist/css/pattern-scaffolding.css'
       ])
+        .pipe(sourcemaps.init())
         // Reorder the files so global is first.
         // If you need to get fancier with the order here's an example:
         // .pipe(order([
@@ -33,6 +32,7 @@ module.exports = {
           'dist/css/*.css'
         ], { base: './' }))
         .pipe(concat('all.css'))
+        .pipe(sourcemaps.write('./'))
         .pipe(dest('./dist/css'))
     );
   },

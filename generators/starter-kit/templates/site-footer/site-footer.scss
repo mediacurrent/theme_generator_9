@@ -6,6 +6,7 @@
   margin-top: 80px;
 
   .site-logo {
+
     g {
       fill: $color-white;
     }
@@ -28,6 +29,7 @@
     margin: 0;
 
     .menu-item {
+      
       &:not(:last-of-type) {
         margin-right: 40px;
       }

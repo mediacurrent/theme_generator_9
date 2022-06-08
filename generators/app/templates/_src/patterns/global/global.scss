@@ -40,7 +40,7 @@ html {
   font-size: 100%;
   line-height: 1.625;
   box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; /* stylelint-disable-line property-no-vendor-prefix */
 }
 
 // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
@@ -73,7 +73,7 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
@@ -93,7 +93,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
@@ -154,7 +154,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* stylelint-disable-line property-no-vendor-prefix */
 }
 
 // Remove the inner border and padding in Firefox.
@@ -204,17 +204,17 @@ textarea {
 }
 
 [type='search'] {
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
   outline-offset: -2px;
 }
 
 [type='search']::-webkit-search-decoration {
-  -webkit-appearance: none;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
 }
 
 // Correct the inability to style clickable types in iOS and Safari.
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* stylelint-disable-line property-no-vendor-prefix */
   font: inherit;
 }
 

@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block content.
+ *
+ * @see template_preprocess_block_content_template()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set classes = [
+  'block-content',
+  'block-content--type-' ~ bundle|clean_class,
+  'block-content--' ~ id,
+  'block-content--view-mode-' ~ view_mode|clean_class,
+  'container',
+] %}
+
+{% set heading = {
+  "heading_level": "3",
+  "modifier": "",
+  "url": "",
+  "title": content.field_title
+} %}
+
+{% if content %}
+  {% include '@<%= themeNameMachine %>/body-text/body-text.twig' with {
+    body_text: content.body
+  } only %}
+{% endif %}

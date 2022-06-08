@@ -63,6 +63,7 @@
       }
 
       &.menu-item--has-submenu {
+
         a {
           padding: 15px 45px 15px 25px;
 
@@ -72,6 +73,7 @@
         }
 
         &.js-open {
+
           > .menu__submenu {
             // height: auto;
             max-height: 1000px;
@@ -83,6 +85,7 @@
         }
 
         @include breakpoint($bp-sm) {
+
           > .menu__submenu {
             display: none;
           }
@@ -90,6 +93,7 @@
           &:hover,
           &:focus,
           &.js-open {
+
             > .menu__submenu {
               // height: auto;
               display: block;
@@ -127,6 +131,7 @@
         min-width: 150px;
 
         @include breakpoint($bp-sm) {
+
           &:hover {
             background: $color-blue;
           }
@@ -141,6 +146,7 @@
         }
 
         &:first-child {
+
           a {
             padding: 0 15px 15px 60px;
 
@@ -151,6 +157,7 @@
         }
 
         &:last-child {
+
           a {
             padding: 15px 15px 15px 60px;
 
@@ -167,6 +174,7 @@
     background-color: $color-tundora;
 
     a {
+      
       &.is-active {
         color: $color-white;
       }
@@ -199,6 +207,7 @@
   }
 
   .active & {
+
     .navicon__bar {
       width: 30px;
 

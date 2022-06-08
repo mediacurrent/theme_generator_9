@@ -17,7 +17,7 @@ The default output was very simple:
 This customized output uses both an SVG icon and a label.
 #}
 
-{% import '@<%= themeNameMachine %>/icons/_icons-macro.twig' as icons %}
+{% import '@<%= themeNameMachine %>/icons/icons-macro.twig' as icons %}
 
 <button class="search__submit" type="submit" name="{{ field_submit_name|default('submit') }}">
   <span class="search__submit-icon">

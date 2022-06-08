@@ -5,7 +5,7 @@
   {% block accordion_items %}
     {% for item in items %}
       {%
-        include '@<%= themeNameMachine %>/accordion/_accordion-item.twig' with {item: item} only
+        include '@<%= themeNameMachine %>/accordion/accordion-item.twig' with {item: item} only
       %}
     {% endfor %}
   {% endblock %}

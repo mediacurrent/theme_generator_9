@@ -13,7 +13,9 @@
 }
 
 .gallery-carousel-item {
+
   &:hover {
+
     > .gallery-carousel-item__text {
       opacity: 0.8;
     }
@@ -59,6 +61,7 @@
   }
 
   &.slick-current {
+    
     &::before {
       content: '\25B2';
       position: absolute;

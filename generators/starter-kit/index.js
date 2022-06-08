@@ -42,52 +42,87 @@ module.exports = class extends Generator {
         choices: [
           {
             value: 'accordion',
-            name: 'Accordion'
+            name: 'Accordion (dependencies: Heading, Icons)'
+          },
+          {
+            value: 'body-text',
+            name: 'Body Text'
           },
           {
             value: 'breadcrumb',
             name: 'Breadcrumb'
           },
           {
+            value: 'breaker',
+            name: 'Breaker (dependencies: Card)'
+          },
+          {
+            value: 'button',
+            name: 'Button'
+          },
+          {
             value: 'card',
-            name: 'Card'
+            name: 'Card (dependencies: Body Text, Heading)'
           },
           {
             value: 'card-list',
-            name: 'Card List (depends on Card)'
+            name: 'Card List (dependencies: Button, Card)'
           },
-          
           {
             value: 'carousel',
-            name: 'Carousel Slider'
+            name: 'Carousel / Slider (dependencies: Heading, Hero)'
+          },
+          {
+            value: 'embed',
+            name: 'Embed (dependencies: Heading)'
+          },
+          {
+            value: 'eyebrow',
+            name: 'Eyebrow'
+          },
+          {
+            value: 'fontawesome',
+            name: 'Fontawesome'
           },
           {
             value: 'gallery-carousel',
-            name: 'Gallery Carousel'
+            name: 'Gallery Carousel (dependencies: Body Text, Heading)'
           },
           {
             value: 'gallery-lightbox',
-            name: 'Gallery + Lightbox'
+            name: 'Gallery + Lightbox (dependencies: Body Text, Heading, Icons)'
+          },
+          {
+            value: 'heading',
+            name: 'Heading'
           },
           {
             value: 'hero',
-            name: 'Hero'
+            name: 'Hero (dependencies: Body Text, Button, Eyebrow, Heading, Media)'
           },
           {
             value: 'latest-news',
-            name: 'Latest News'
+            name: 'Latest News (dependencies: Card, Heading)'
+          },
+          {
+            value: 'l-flex',
+            name: 'L-Flex'
           },
           {
             value: 'main-menu',
             name: 'Main Menu'
           },
           {
+            value: 'menu',
+            name: 'Menu'
+          },
+          {
             value: 'map',
-            name: 'Map'
+            name: 'Map (dependencies: Eyebrow)'
           },
           {
             value: 'media',
-            name: 'Media'
+            name: 'Media (dependencies: Heading, Media)'
           },
           {
             value: 'message',
@@ -95,11 +130,11 @@ module.exports = class extends Generator {
           },
           {
             value: 'page-title',
-            name: 'Page Title'
+            name: 'Page Title (dependencies: Heading)'
           },
           {
             value: 'pager',
-            name: 'Pager'
+            name: 'Pager (dependencies: Icons)'
           },
           {
             value: 'quote',
@@ -111,7 +146,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'search-box',
-            name: 'Search Box'
+            name: 'Search Box (dependencies: Icons)'
           },
           {
             value: 'site-branding',
@@ -119,11 +154,11 @@ module.exports = class extends Generator {
           },
           {
             value: 'site-header',
-            name: 'Site Header'
+            name: 'Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Utility Nav, Site Branding)'
           },
           {
             value: 'social-menu',
-            name: 'Social Menu'
+            name: 'Social Menu (dependencies: Icons)'
           },
           {
             value: 'tabs',
@@ -131,11 +166,15 @@ module.exports = class extends Generator {
           },
           {
             value: 'teaser',
-            name: 'Teaser'
+            name: 'Teaser: (dependencies: Card)'
           },
           {
             value: 'utility-nav',
-            name: 'Utility Nav / Account'
+            name: 'Utility Nav / Account (dependencies: Menu)'
+          },
+          {
+            value: 'views',
+            name: 'Views (dependencies: Button, Heading)'
           },
         ]
       }
@@ -177,23 +216,67 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       // the user provided theme machine name.
       this.themeNameMachine = this.themeNameMachine || props.themeNameMachine;
 
-      // Push base components.
-      // props.howMuchTheme.push('body-text');
-      // props.howMuchTheme.push('button');
-      // props.howMuchTheme.push('eyebrow');
-      // props.howMuchTheme.push('heading');
-      // props.howMuchTheme.push('hidden');
-      // props.howMuchTheme.push('icons');
-      // props.howMuchTheme.push('l-flex');
-      // props.howMuchTheme.push('menu');
-      // props.howMuchTheme.push('page-layout');
-      // props.howMuchTheme.push('site-footer');
-
       // Check to see if any of the components that need dependencies
       // are selected.
-      // card-list requires card
-      if (props.howMuchTheme.includes('card-list')) {
+      if (props.howMuchTheme.includes('accordion')) {
+        props.howMuchTheme.push('heading', 'icons');
+      }
+      if (props.howMuchTheme.includes('breaker')) {
         props.howMuchTheme.push('card');
+      }
+      if (props.howMuchTheme.includes('card')) {
+        props.howMuchTheme.push('body-text', 'heading');
+      }
+      if (props.howMuchTheme.includes('card-list')) {
+        props.howMuchTheme.push('button', 'card');
+      }
+      if (props.howMuchTheme.includes('carousel')) {
+        props.howMuchTheme.push('heading', 'hero');
+      }
+      if (props.howMuchTheme.includes('embed')) {
+        props.howMuchTheme.push('heading');
+      }
+      if (props.howMuchTheme.includes('gallery-carousel')) {
+        props.howMuchTheme.push('body-text', 'heading');
+      }
+      if (props.howMuchTheme.includes('gallery-lightbox')) {
+        props.howMuchTheme.push('body-text', 'heading', 'icons');
+      }
+      if (props.howMuchTheme.includes('hero')) {
+        props.howMuchTheme.push('body-text', 'button', 'eyebrow', 'heading', 'media');
+      }
+      if (props.howMuchTheme.includes('latest-news')) {
+        props.howMuchTheme.push('card', 'heading');
+      }
+      if (props.howMuchTheme.includes('map')) {
+        props.howMuchTheme.push('eyebrow');
+      }
+      if (props.howMuchTheme.includes('media')) {
+        props.howMuchTheme.push('eyebrow');
+      }
+      if (props.howMuchTheme.includes('page-title')) {
+        props.howMuchTheme.push('heading');
+      }
+      if (props.howMuchTheme.includes('pager')) {
+        props.howMuchTheme.push('icons');
+      }
+      if (props.howMuchTheme.includes('search-box')) {
+        props.howMuchTheme.push('icons');
+      }
+      if (props.howMuchTheme.includes('site-header')) {
+        props.howMuchTheme.push('breaker', 'l-flex', 'main-menu', 'utility-nav', 'site-branding');
+      }
+      if (props.howMuchTheme.includes('social-menu')) {
+        props.howMuchTheme.push('icons');
+      }
+      if (props.howMuchTheme.includes('teaser')) {
+        props.howMuchTheme.push('card');
+      }
+      if (props.howMuchTheme.includes('utility-nav')) {
+        props.howMuchTheme.push('menu');
+      }
+      if (props.howMuchTheme.includes('views')) {
+        props.howMuchTheme.push('button', 'heading');
       }
       
       // props.howMuchTheme is an array of all selected options.

@@ -29,6 +29,7 @@
     }
 
     @include breakpoint($bp-sm) {
+
       .card__content {
         margin-left: 6rem;
       }

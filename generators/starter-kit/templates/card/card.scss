@@ -5,6 +5,7 @@
   background-color: $color-white;
 
   @include breakpoint($bp-sm) {
+
     &.horizontal {
       display: flex;
 
@@ -77,6 +78,7 @@
 }
 
 @include breakpoint($bp-xsm) {
+  
   .card--media-right {
     flex-direction: row-reverse;
 

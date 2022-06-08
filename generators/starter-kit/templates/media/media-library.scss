@@ -11,7 +11,7 @@
 
     .media-library-item__content {
 
-      &>article {
+      & > article {
         position: relative;
 
         .media-library-item__attributes {
@@ -23,7 +23,6 @@
         .media-library-item__preview {
           max-width: calc(100% - 2px);
         }
-
       }
     }
   }
