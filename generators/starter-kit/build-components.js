@@ -17,23 +17,23 @@ module.exports = async function buildComponents({
   // eslint-disable-next-line max-len
   return await Promise.all(exampleComponents.map(async (component) => {
 
+    // Copy the selected component into the theme.
+    // Exclude the templates folder, it needs to go in a different directory.
+    app.fs.copyTpl(
+      [
+        app.templatePath(`${component}`),
+        `!${app.templatePath(`${component}`)}/templates`,
+        `!${app.templatePath(`${component}/${component}.twig`)}`
+      ],
+      app.destinationPath(`src/patterns/components/${component}`),
+      {
+        themeNameMachine: app.themeNameMachine
+      }
+    );
+
     // Copy the twig template, passing in the themeMachineName
     // so it can be used as a twig namespace.
     if (fs.existsSync(`${component}/${component}.twig`)) {
-
-      // Copy the selected component into the theme.
-    // Exclude the templates folder, it needs to go in a different directory.
-      app.fs.copyTpl(
-        [
-          app.templatePath(`${component}`),
-          `!${app.templatePath(`${component}`)}/templates`,
-          `!${app.templatePath(`${component}/${component}.twig`)}`
-        ],
-        app.destinationPath(`src/patterns/components/${component}`),
-        {
-          themeNameMachine: app.themeNameMachine
-        }
-      );
       app.fs.copyTpl(
         app.templatePath(`${component}/${component}.twig`),
         // eslint-disable-next-line max-len
