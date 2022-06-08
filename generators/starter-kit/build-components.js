@@ -22,27 +22,13 @@ module.exports = async function buildComponents({
     app.fs.copyTpl(
       [
         app.templatePath(`${component}`),
-        `!${app.templatePath(`${component}`)}/templates`,
-        `!${app.templatePath(`${component}/${component}.twig`)}`
+        `!${app.templatePath(`${component}`)}/templates`
       ],
       app.destinationPath(`src/patterns/components/${component}`),
       {
         themeNameMachine: app.themeNameMachine
       }
     );
-
-    // Copy the twig template, passing in the themeMachineName
-    // so it can be used as a twig namespace.
-    if (fs.existsSync(`${component}/${component}.twig`)) {
-      app.fs.copyTpl(
-        app.templatePath(`${component}/${component}.twig`),
-        // eslint-disable-next-line max-len
-        app.destinationPath(`src/patterns/components/${component}/${component}.twig`),
-        {
-          themeNameMachine: app.themeNameMachine
-        }
-      );
-    }
 
     // Copy any Drupal templates into the templates directory.
     fs.readdir(
