@@ -1,5 +1,5 @@
 {
-  "name": "<%= themeNameMachine %>",
+  "name": "<%= themeName %>",
   "version": "1.0.0",
   "scripts": {
     "build": "gulp",
@@ -28,12 +28,8 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
-    "@pattern-lab/core": "^5.16.2",
-    "@pattern-lab/engine-twig-php": "^5.16.2",
-    "@pattern-lab/uikit-workshop": "^5.16.2",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
-    "generator-mc-d8-theme": "^2.5.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -50,7 +46,6 @@
     "sass": "^1.32.8",
     "stylelint": "^13.12.0",
     "stylelint-config-standard": "^21.0.0",
-    "stylelint-scss": "^3.19.0",
-    "yo": "^4.3.0"
+    "stylelint-scss": "^3.19.0"
   }
 }
