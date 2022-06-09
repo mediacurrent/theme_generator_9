@@ -122,23 +122,27 @@ The theme generator allows you to (optionally) add example components / template
 - Embed
 - Eyebrow
 - Fontawesome
+- Form
 - Gallery Carousel
 - Gallery + Lightbox
 - Heading
 - Hero
-- Latest News
+- Icons
 - L-Flex
+- Latest News
 - Main Menu
 - Map
 - Media
 - Menu
 - Messages
+- Node Templates (Rain)
 - Page Title
 - Pager
 - Quote
 - Search API Results
 - Search Box
 - Site Branding
+- Site Footer
 - Site Header
 - Social Menu
 - Tabs
