@@ -56,7 +56,7 @@ module.exports = function addThirdParty(libraries) {
         ]
       }
     };
-    // Add slick to the libraries object.
+    // Add colorbox to the libraries object.
     libraries.push(colorbox);
   }
 

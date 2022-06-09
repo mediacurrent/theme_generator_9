@@ -400,43 +400,26 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
   }
 
   install() {
-    // If `carousel` is selected, attempt to link up the slick
-    // carousel dependency. It'll still be up to the user to add SlickJS
-    // as a project dependency.
-    // if (this.exampleComponents.indexOf('carousel') !== -1) {
-    //   // If a carousel third party library is required, add it to Pattern Lab
-    //   // so it works there.
-    //   replace({
-    //     files: this.destinationPath('src/styleguide/meta/_00-head.twig'),
-    //     from: /<!-- Vendor CSS placeholder -->/g,
-    //     to: '<link rel="stylesheet" href="/libraries/slick-carousel/slick/slick.css" media="all" />'
-    //   })
-    //     .catch(() => {
-    //       this.log('Failed to append slick css to Pattern Lab file styleguide/meta/_00-head.twig');
-    //     });
-    //   replace({
-    //     files: this.destinationPath('src/styleguide/meta/_01-foot.twig'),
-    //     from: /<!-- Vendor JS placeholder -->/g,
-    //     to: '<script src="/libraries/slick-carousel/slick/slick.min.js"></script>'
-    //   })
-    //     .catch(() => {
-    //       this.log('Failed to append slick js to Pattern Lab file styleguide/meta/_01-foot.twig');
-    //     });
-    // }
+    var colorbox = '';
+    var slick = '';
+
+    // If `carousel` or `gallery-carousel` is selected, attempt to link up the SlickJS.
+    if (this.exampleComponents.indexOf('carousel') !== -1 || this.exampleComponents.indexOf('gallery-carousel') !== -1) {
+      slick = '<script type="text/javascript" src="../../../src/vendor/slickjs/slick.min.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick.css"/><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick-theme.css"/>';
+    }
+    // If `gallery-lightbox` is selected, attempt to link up the Colorbox.
+    if (this.exampleComponents.indexOf('gallery-lightbox') !== -1) {
+      colorbox = '<script type="text/javascript" src="../../../src/vendor/colorbox/jquery.colorbox.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/colorbox/colorbox.css"/>';
+    }
+
+    replace({
+      files: this.destinationPath('src/styleguide/meta/_foot.twig'),
+      from: [/<!-- Colorbox placeholder -->/g, /<!-- SlickJS placeholder -->/g],
+      to: [colorbox, slick],
+    })
   }
 
   end() {
-    // If `carousel` is selected, inform the user that they need to install
-    // the SlickJS carousel dependency.
-    // if (this.exampleComponents.indexOf('carousel') !== -1) {
-    //   this.log('------------------------------------------------------------');
-    //   this.log('👋 You installed the Carousel component which requires SlickJS.');
-    //   this.log('Install SlickJS using composer with:');
-    //   this.log('composer require npm-asset/slick-carousel --working-dir=../../../../');
-    //   this.log('OR');
-    //   this.log(`Manually add Slick to the /libraries folder and update the carousel library in the ${this.themeNameMachine}.libraries.yml file.`);
-    //   this.log('https://github.com/kenwheeler/slick/');
-    //   this.log('------------------------------------------------------------');
-    // }
+   
   }
 };
