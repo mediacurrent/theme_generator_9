@@ -437,10 +437,9 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
 
     if (this.exampleComponents.indexOf('views') !== -1) {
       viewsBlock = `if ($block_content->bundle() === 'views') {
-      // Add wrapper to the paragraph views.
-      $views_ref = $block_content->field_views_ref->getValue();
-      $variables['wrapper_class'] = str_replace('-', '_', $views_ref[0]['target_id'] . '-' . $views_ref[0]['display_id'] . '__wrapper');
-    }
+    // Add wrapper to the paragraph views.
+    $views_ref = $block_content->field_views_ref->getValue();
+    $variables['wrapper_class'] = str_replace('-', '_', $views_ref[0]['target_id'] . '-' . $views_ref[0]['display_id'] . '__wrapper');
   }`;
     }
     
@@ -522,8 +521,8 @@ function <%= themeNameMachine %>_theme_suggestions_views_view_unformatted__media
 
     replace({
       files: this.destinationPath(`${this.themeNameMachine}.theme`),
-      from: [/\/\* Slider paragraph\. \*\//g, /\/\* Views block\. \*\//g, /\/\* Gallery Carousel\. \*\//g, /\/\* Latest News\. \*\//g, /\/\* Media Library\. \*\//g],
-      to: [sliderParagraph, viewsBlock, galleryCarouselBlock, latestNews, mediaLibrary],
+      from: [/\/\* Slider paragraph\. \*\//g, /\/\* Views block\. \*\//g, /\/\* Gallery Carousel\. \*\//g, /\/\* Latest News\. \*\//g, /\/\* Media Library\. \*\//g, /\<\%\= themeNameMachine \%\>/g],
+      to: [sliderParagraph, viewsBlock, galleryCarouselBlock, latestNews, mediaLibrary, this.themeNameMachine],
     })
   }
 
