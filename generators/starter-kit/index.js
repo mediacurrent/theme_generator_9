@@ -402,6 +402,11 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
   install() {
     var colorbox = '';
     var slick = '';
+    var sliderParagraph = '';
+    var viewsBlock = '';
+    var galleryCarouselBlock = '';
+    var latestNews = '';
+    var mediaLibrary = '';
 
     // If `carousel` or `gallery-carousel` is selected, attempt to link up the SlickJS.
     if (this.exampleComponents.indexOf('carousel') !== -1 || this.exampleComponents.indexOf('gallery-carousel') !== -1) {
@@ -416,6 +421,109 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       files: this.destinationPath('src/styleguide/meta/_foot.twig'),
       from: [/<!-- Colorbox placeholder -->/g, /<!-- SlickJS placeholder -->/g],
       to: [colorbox, slick],
+    })
+
+    // .theme component-specific updates.
+
+    if (this.exampleComponents.indexOf('carousel') !== -1) {
+      sliderParagraph = `// Pass along total count to template.
+  if ($paragraph->bundle() == 'slider_item') {
+    $parent = $paragraph->getParentEntity();
+    if (!empty($parent) && $parent->hasField('field_slider_item')) {
+      $variables['count'] = $paragraph->getParentEntity()->get('field_slider_item')->count();
+    }
+  }`;
+    }
+
+    if (this.exampleComponents.indexOf('views') !== -1) {
+      viewsBlock = `if ($block_content->bundle() === 'views') {
+      // Add wrapper to the paragraph views.
+      $views_ref = $block_content->field_views_ref->getValue();
+      $variables['wrapper_class'] = str_replace('-', '_', $views_ref[0]['target_id'] . '-' . $views_ref[0]['display_id'] . '__wrapper');
+    }
+  }`;
+    }
+    
+    if (this.exampleComponents.indexOf('gallery-carousel') !== -1) {
+      galleryCarouselBlock = `// We want to render a gallery carousel.
+  if ($block_content->bundle() == 'gallery_carousel') {
+    $carousel_items = [];
+    $carousel_thumbs = [];
+
+    if ($block_content->hasField('field_gallery_item')) {
+      $count = $block_content->get('field_gallery_item')->count();
+
+      // Populate thumbs and images.
+      for ($c = 0; $c < $count; $c++) {
+        $gallery_item = $block_content->get('field_gallery_item')[$c]->entity;
+
+        if ($gallery_item) {
+          $image_url = $thumb_url = '';
+          if (!empty($gallery_item->get('field_media')->entity)) {
+            $image_url = file_create_url($gallery_item->get('field_media')->entity->get('field_image')->entity->getFileUri());
+          }
+          if ($gallery_item->hasField('field_thumb') && !empty($gallery_item->get('field_thumb')->entity)) {
+            $thumb_url = file_create_url($gallery_item->get('field_thumb')->entity->getFileUri());
+          }
+          else {
+            $thumb_url = $image_url;
+          }
+
+          $item = [
+            'media' => $image_url,
+            'media_description' => $gallery_item->hasField('field_summary') ? $gallery_item->get('field_summary')->value : NULL,
+          ];
+
+          $thumb = [
+            'media_thumb' => $thumb_url,
+          ];
+
+          $carousel_items[] = $item;
+          $carousel_thumbs[] = $thumb;
+        }
+      }
+
+      $variables['carousel_items'] = $carousel_items;
+      $variables['carousel_thumbs'] = $carousel_thumbs;
+    }
+  }`;
+    }
+
+    if (this.exampleComponents.indexOf('gallery-carousel') !== -1) {
+      latestNews = `/**
+* Implements hook_preprocess_preprocess_views_view_fields().
+*/
+function <%= themeNameMachine %>_preprocess_views_view_fields__latest_news__block_1(array &$variables) {
+  // Separate the link and the text for the more link.
+  if (isset($variables['fields']['view_node'])) {
+    $more_link = Url::fromRoute('entity.node.canonical', ['node' => $variables['row']->nid]);
+    $variables['more_link'] = [
+      'url' => $more_link->toString(),
+      'text' => t('Read more'),
+    ];
+  }
+  if (isset($variables['row']->index)) {
+    if ($variables['row']->index === 0) {
+      // Make the first card horizontal display.
+      $variables['modifier'] = 'horizontal';
+    }
+  }
+}`;
+    }
+
+    if (this.exampleComponents.indexOf('media') !== -1) {
+      mediaLibrary = `/**
+* Implements hook_theme_suggestions_views_view_unformatted_alter().
+*/
+function <%= themeNameMachine %>_theme_suggestions_views_view_unformatted__media_library_alter(&$suggestions, &$vars) {
+  $suggestions[] = 'views_view_unformatted__media_library__rain';
+}`;
+    }
+
+    replace({
+      files: this.destinationPath(`${this.themeNameMachine}.theme`),
+      from: [/\/\* Slider paragraph\. \*\//g, /\/\* Views block\. \*\//g, /\/\* Gallery Carousel\. \*\//g, /\/\* Latest News\. \*\//g, /\/\* Media Library\. \*\//g],
+      to: [sliderParagraph, viewsBlock, galleryCarouselBlock, latestNews, mediaLibrary],
     })
   }
 
