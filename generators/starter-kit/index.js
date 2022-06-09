@@ -41,152 +41,152 @@ module.exports = class extends Generator {
         // Or just do it based on folder name. /shrug
         choices: [
           {
-            value: 'accordion',
-            name: 'Accordion (dependencies: Heading, Icons)'
-          },
-          {
             value: 'body-text',
-            name: 'Body Text'
-          },
-          {
-            value: 'breadcrumb',
-            name: 'Breadcrumb'
-          },
-          {
-            value: 'breaker',
-            name: 'Breaker (dependencies: Card)'
+            name: 'Element - Body Text'
           },
           {
             value: 'button',
-            name: 'Button'
-          },
-          {
-            value: 'card',
-            name: 'Card (dependencies: Body Text, Heading)'
-          },
-          {
-            value: 'card-list',
-            name: 'Card List (dependencies: Button, Card)'
-          },
-          {
-            value: 'carousel',
-            name: 'Carousel / Slider (dependencies: Heading, Hero)'
-          },
-          {
-            value: 'embed',
-            name: 'Embed (dependencies: Heading)'
+            name: 'Element - Button'
           },
           {
             value: 'eyebrow',
-            name: 'Eyebrow'
-          },
-          {
-            value: 'fontawesome',
-            name: 'Font Awesome'
-          },
-          {
-            value: 'gallery-carousel',
-            name: 'Gallery Carousel (dependencies: Body Text, Heading)'
-          },
-          {
-            value: 'gallery-lightbox',
-            name: 'Gallery + Lightbox (dependencies: Body Text, Heading, Icons)'
+            name: 'Element - Eyebrow'
           },
           {
             value: 'heading',
-            name: 'Heading'
-          },
-          {
-            value: 'hero',
-            name: 'Hero (dependencies: Body Text, Button, Eyebrow, Heading, Media)'
-          },
-          {
-            value: 'latest-news',
-            name: 'Latest News (dependencies: Card, Heading)'
+            name: 'Element - Heading'
           },
           {
             value: 'l-flex',
-            name: 'L-Flex'
-          },
-          {
-            value: 'main-menu',
-            name: 'Main Menu'
-          },
-          {
-            value: 'map',
-            name: 'Map (dependencies: Eyebrow)'
-          },
-          {
-            value: 'media',
-            name: 'Media (dependencies: Heading, Media)'
-          },
-          {
-            value: 'menu',
-            name: 'Menu'
-          },
-          {
-            value: 'message',
-            name: 'Messages'
-          },
-          {
-            value: 'node',
-            name: 'Node Templates'
+            name: 'Layout - L-Flex'
           },
           {
             value: 'page-layout',
-            name: 'Page Layout (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Site Footer, Utility Nav)'
-          },
-          {
-            value: 'page-title',
-            name: 'Page Title (dependencies: Heading)'
-          },
-          {
-            value: 'pager',
-            name: 'Pager (dependencies: Icons)'
-          },
-          {
-            value: 'quote',
-            name: 'Quote'
-          },
-          {
-            value: 'search-api-results',
-            name: 'Search API Results'
-          },
-          {
-            value: 'search-box',
-            name: 'Search Box (dependencies: Icons)'
+            name: 'Layout - Page Layout (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Site Footer, Utility Nav)'
           },
           {
             value: 'site-branding',
-            name: 'Site Branding'
+            name: 'Layout - Site Branding'
           },
           {
             value: 'site-footer',
-            name: 'Site Footer (dependencies: Body Text, Menu, Site Branding, Social Menu, Utility Nav)'
+            name: 'Layout - Site Footer (dependencies: Body Text, Menu, Site Branding, Social Menu, Utility Nav)'
           },
           {
             value: 'site-header',
-            name: 'Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Utility Nav)'
+            name: 'Layout - Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Utility Nav)'
           },
           {
             value: 'social-menu',
-            name: 'Social Menu (dependencies: Icons)'
-          },
-          {
-            value: 'tabs',
-            name: 'Tabs'
-          },
-          {
-            value: 'teaser',
-            name: 'Teaser: (dependencies: Card)'
+            name: 'Layout - Social Menu (dependencies: Icons)'
           },
           {
             value: 'utility-nav',
-            name: 'Utility Nav / Account (dependencies: Menu)'
+            name: 'Layout - Utility Nav / Account (dependencies: Menu)'
+          },
+          {
+            value: 'breadcrumb',
+            name: 'Drupal - Breadcrumb'
+          },
+          {
+            value: 'fontawesome',
+            name: 'Drupal - Font Awesome'
+          },
+          {
+            value: 'menu',
+            name: 'Drupal - Menu'
+          },
+          {
+            value: 'main-menu',
+            name: 'Drupal - Main Menu'
+          },
+          {
+            value: 'message',
+            name: 'Drupal - Messages'
+          },
+          {
+            value: 'page-title',
+            name: 'Drupal - Page Title (dependencies: Heading)'
+          },
+          {
+            value: 'pager',
+            name: 'Drupal - Pager (dependencies: Icons)'
+          },
+          {
+            value: 'search-api-results',
+            name: 'Drupal - Search API Results'
+          },
+          {
+            value: 'search-box',
+            name: 'Drupal - Search Box (dependencies: Icons)'
+          },
+          {
+            value: 'tabs',
+            name: 'Drupal - Tabs'
+          },
+          {
+            value: 'node',
+            name: 'Node - Rain Templates'
+          },
+          {
+            value: 'accordion',
+            name: 'Block - Accordion (dependencies: Heading, Icons)'
+          },
+          {
+            value: 'breaker',
+            name: 'Block - Breaker (dependencies: Card)'
+          },
+          {
+            value: 'card',
+            name: 'Block - Card (dependencies: Body Text, Heading)'
+          },
+          {
+            value: 'card-list',
+            name: 'Block - Card List (dependencies: Button, Card)'
+          },
+          {
+            value: 'carousel',
+            name: 'Block - Carousel / Slider (dependencies: Heading, Hero)'
+          },
+          {
+            value: 'embed',
+            name: 'Block - Embed (dependencies: Heading)'
+          },
+          {
+            value: 'gallery-carousel',
+            name: 'Block - Gallery Carousel (dependencies: Body Text, Heading)'
+          },
+          {
+            value: 'gallery-lightbox',
+            name: 'Block - Gallery + Lightbox (dependencies: Body Text, Heading, Icons)'
+          },
+          {
+            value: 'hero',
+            name: 'Block - Hero (dependencies: Body Text, Button, Eyebrow, Heading, Media)'
+          },
+          {
+            value: 'latest-news',
+            name: 'Block - Latest News (dependencies: Card, Heading)'
+          },
+          {
+            value: 'map',
+            name: 'Block - Map (dependencies: Eyebrow)'
+          },
+          {
+            value: 'media',
+            name: 'Block - Media (dependencies: Heading, Media)'
+          },
+          {
+            value: 'quote',
+            name: 'Block - Quote'
+          },
+          {
+            value: 'teaser',
+            name: 'Block - Teaser (dependencies: Card)'
           },
           {
             value: 'views',
-            name: 'Views (dependencies: Button, Heading)'
+            name: 'Block - Views (dependencies: Button, Heading)'
           },
         ]
       }

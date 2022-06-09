@@ -111,44 +111,43 @@ The following is supported by your new theme.
 
 The theme generator allows you to (optionally) add example components / templates.
 
-- Accordion
-- Body Text
-- Breadcrumb
-- Breaker
-- Button
-- Card
-- Card List
-- Carousel
-- Embed
-- Eyebrow
-- Fontawesome
-- Form
-- Gallery Carousel
-- Gallery + Lightbox
-- Heading
-- Hero
-- Icons
-- L-Flex
-- Latest News
-- Main Menu
-- Map
-- Media
-- Menu
-- Messages
-- Node Templates (Rain)
-- Page Title
-- Pager
-- Quote
-- Search API Results
-- Search Box
-- Site Branding
-- Site Footer
-- Site Header
-- Social Menu
-- Tabs
-- Teaser
-- Utility Nav / Account
-- Views
+- Element - Body Text
+- Element - Button
+- Element - Eyebrow
+- Element - Heading
+- Layout - L-Flex
+- Layout - Page Layout (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Site Footer, Utility Nav)
+- Layout - Site Branding
+- Layout - Site Footer (dependencies: Body Text, Menu, Site Branding, Social Menu, Utility Nav)
+- Layout - Site Header (dependencies: Breadcrumb, L-Flex, Main Menu, Site Branding, Utility Nav)
+- Layout - Social Menu (dependencies: Icons)
+- Layout - Utility Nav / Account (dependencies: Menu)
+- Drupal - Breadcrumb
+- Drupal - Font Awesome
+- Drupal - Menu
+- Drupal - Main Menu
+- Drupal - Messages
+- Drupal - Page Title (dependencies: Heading)
+- Drupal - Pager (dependencies: Icons)
+- Drupal - Search API Results
+- Drupal - Search Box (dependencies: Icons)
+- Drupal - Tabs
+- Node - Rain Templates
+- Block - Accordion (dependencies: Heading, Icons)
+- Block - Breaker (dependencies: Card)
+- Block - Card (dependencies: Body Text, Heading)
+- Block - Card List (dependencies: Button, Card)
+- Block - Carousel / Slider (dependencies: Heading, Hero)
+- Block - Embed (dependencies: Heading)
+- Block - Gallery Carousel (dependencies: Body Text, Heading)
+- Block - Gallery + Lightbox (dependencies: Body Text, Heading, Icons)
+- Block - Hero (dependencies: Body Text, Button, Eyebrow, Heading, Media)
+- Block - Latest News (dependencies: Card, Heading)
+- Block - Map (dependencies: Eyebrow)
+- Block - Media (dependencies: Heading, Media)
+- Block - Quote
+- Block - Teaser (dependencies: Card)
+- Block - Views (dependencies: Button, Heading)
 
 These can include both component and Drupal templates that are added to the appropriate place during theme generation. Your theme.libraries.yml is also updated to include the relevant libraries.
 
