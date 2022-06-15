@@ -1,18 +1,16 @@
 <?php
 
-namespace PatternLabTwigExtensions;
-
-use Twig_Extension;
-use Twig_ExtensionInterface;
-use Twig_SimpleFilter;
-use Twig_SimpleFunction;
+use Twig\Extension\AbstractExtension;
+use Twig\Extension\ExtensionInterface;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * These filters come from drupal-twig-extensions.
  *
  * See more: https://github.com/pattern-lab/drupal-twig-extensions.
  */
-class BasicTwigExtensions extends Twig_Extension implements Twig_ExtensionInterface {
+class BasicTwigExtensions extends AbstractExtension implements ExtensionInterface {
 
   /**
    * Dummy function that passes a param straight through.
@@ -22,22 +20,6 @@ class BasicTwigExtensions extends Twig_Extension implements Twig_ExtensionInterf
    */
   public static function returnParam($param) {
     return $param;
-  }
-
-  /**
-   * Prepares a string for use as a valid HTML ID.
-   *
-   * @param string $id
-   *   The ID to clean.
-   *
-   * @return string
-   *   The cleaned ID.
-   */
-  public static function getId($id) {
-    $id = str_replace([' ', '_', '[', ']'], ['-', '-', '-', ''], strtolower($id));
-    $id = preg_replace('/[^A-Za-z0-9\\-_]/', '', $id);
-    $id = preg_replace('/\\-+/', '-', $id);
-    return $id;
   }
 
   /**
@@ -65,17 +47,16 @@ class BasicTwigExtensions extends Twig_Extension implements Twig_ExtensionInterf
    *
    * @link Drupal Twig Filters - https://www.drupal.org/docs/8/theming/twig/filters-modifying-variables-in-twig-templates
    *
-   * @return \Twig_SimpleFilter[]
+   * @return Twig\TwigFilter[]
    *   Returns a list of filters.
    */
   public function getFilters() {
     return [
-      new Twig_SimpleFilter('t', [$this, 'returnParam']),
-      new Twig_SimpleFilter('render', [$this, 'returnParam']),
-      new Twig_SimpleFilter('placeholder', [$this, 'returnParam']),
-      new Twig_SimpleFilter('without', [$this, 'returnParam']),
-      new Twig_SimpleFilter('clean_class', [$this, 'returnParam']),
-      new Twig_SimpleFilter('clean_id', [$this, 'getId']),
+      new TwigFilter('t', [$this, 'returnParam']),
+      new TwigFilter('render', [$this, 'returnParam']),
+      new TwigFilter('placeholder', [$this, 'returnParam']),
+      new TwigFilter('without', [$this, 'returnParam']),
+      new TwigFilter('clean_class', [$this, 'returnParam']),
     ];
   }
 
@@ -84,13 +65,13 @@ class BasicTwigExtensions extends Twig_Extension implements Twig_ExtensionInterf
    *
    * @link Drupal Twig Functions - https://www.drupal.org/node/2486991
    *
-   * @return \Twig_SimpleFunction[]
+   * @return Twig\TwigFunction[]
    *   Returns list of functions.
    */
   public function getFunctions() {
     return [
-      new Twig_SimpleFunction('url', [$this, 'inertHref']),
-      new Twig_SimpleFunction('path', function ($string) {
+      new TwigFunction('url', [$this, 'inertHref']),
+      new TwigFunction('path', function ($string) {
         if ($string === '<front>') {
           return '/';
         }
@@ -98,9 +79,9 @@ class BasicTwigExtensions extends Twig_Extension implements Twig_ExtensionInterf
           return $string;
         }
       }),
-      new Twig_SimpleFunction('link', [$this, 'inertHref']),
-      new Twig_SimpleFunction('file_url', [$this, 'returnParam']),
-      new Twig_SimpleFunction('attach_library', [$this, 'returnNothing']),
+      new TwigFunction('link', [$this, 'inertHref']),
+      new TwigFunction('file_url', [$this, 'returnParam']),
+      new TwigFunction('attach_library', [$this, 'returnNothing']),
     ];
   }
 
