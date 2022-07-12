@@ -160,7 +160,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     // appended data doesn't run into the current data within the file.
     fs.appendFileSync(
       this.destinationPath(this.themeNameMachine + '.libraries.yml'),
-      '\r\n'
+      '\n'
     );
 
     // Update the libraries.yml file with the new component library.
