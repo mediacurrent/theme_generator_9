@@ -362,7 +362,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
                 jsYaml.safeDump(component),
                 {
                   trimEnd: false,
-                  separator: '\r\n'
+                  separator: '\n'
                 }
               );
             }
@@ -372,7 +372,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
               // the file.
               fs.appendFileSync(
                 this.destinationPath(this.themeNameMachine + '.libraries.yml'),
-                '\r\n'
+                '\n'
               );
 
               // Update the libraries.yml file with the new component library.
