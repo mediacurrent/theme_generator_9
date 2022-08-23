@@ -2,8 +2,8 @@
 
 namespace PatternLabTwigExtensions;
 
-use Twig\Extension\AbstractExtension;
 use Twig\Extension\ExtensionInterface;
+use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -22,6 +22,22 @@ class BasicTwigExtensions extends AbstractExtension implements ExtensionInterfac
    */
   public static function returnParam($param) {
     return $param;
+  }
+
+  /**
+   * Prepares a string for use as a valid HTML ID.
+   *
+   * @param string $id
+   *   The ID to clean.
+   *
+   * @return string
+   *   The cleaned ID.
+   */
+  public static function getId($id) {
+    $id = str_replace([' ', '_', '[', ']'], ['-', '-', '-', ''], strtolower($id));
+    $id = preg_replace('/[^A-Za-z0-9\\-_]/', '', $id);
+    $id = preg_replace('/\\-+/', '-', $id);
+    return $id;
   }
 
   /**
@@ -49,7 +65,7 @@ class BasicTwigExtensions extends AbstractExtension implements ExtensionInterfac
    *
    * @link Drupal Twig Filters - https://www.drupal.org/docs/8/theming/twig/filters-modifying-variables-in-twig-templates
    *
-   * @return Twig\TwigFilter[]
+   * @return \Twig\TwigFilter[]
    *   Returns a list of filters.
    */
   public function getFilters() {
@@ -59,6 +75,7 @@ class BasicTwigExtensions extends AbstractExtension implements ExtensionInterfac
       new TwigFilter('placeholder', [$this, 'returnParam']),
       new TwigFilter('without', [$this, 'returnParam']),
       new TwigFilter('clean_class', [$this, 'returnParam']),
+      new TwigFilter('clean_id', [$this, 'getId']),
     ];
   }
 
@@ -67,7 +84,7 @@ class BasicTwigExtensions extends AbstractExtension implements ExtensionInterfac
    *
    * @link Drupal Twig Functions - https://www.drupal.org/node/2486991
    *
-   * @return Twig\TwigFunction[]
+   * @return \Twig\TwigFunction[]
    *   Returns list of functions.
    */
   public function getFunctions() {

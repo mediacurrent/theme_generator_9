@@ -5,9 +5,7 @@
  * Functions to support theming in the <%= themeNameMachine %> theme.
  */
 
-use Drupal\image\Entity\ImageStyle;
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Link;
 use Drupal\Core\Url;
 
 /**
