@@ -459,10 +459,10 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
         if ($gallery_item) {
           $image_url = $thumb_url = '';
           if (!empty($gallery_item->get('field_media')->entity)) {
-            $image_url = file_create_url($gallery_item->get('field_media')->entity->get('field_image')->entity->getFileUri());
+            $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($gallery_item->get('field_media')->entity->get('field_image')->entity->getFileUri());
           }
           if ($gallery_item->hasField('field_thumb') && !empty($gallery_item->get('field_thumb')->entity)) {
-            $thumb_url = file_create_url($gallery_item->get('field_thumb')->entity->getFileUri());
+            $thumb_url = \Drupal::service('file_url_generator')->generateAbsoluteString($gallery_item->get('field_thumb')->entity->getFileUri());
           }
           else {
             $thumb_url = $image_url;
