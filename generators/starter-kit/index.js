@@ -490,8 +490,8 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
 
     if (this.exampleComponents.indexOf('gallery-carousel') !== -1) {
       latestNews = `/**
-  * Implements hook_preprocess_preprocess_views_view_fields().
-  */
+ * Implements hook_preprocess_views_view_fields().
+ */
 function <%= themeNameMachine %>_preprocess_views_view_fields__latest_news__block_1(array &$variables) {
   // Separate the link and the text for the more link.
   if (isset($variables['fields']['view_node'])) {
@@ -512,8 +512,8 @@ function <%= themeNameMachine %>_preprocess_views_view_fields__latest_news__bloc
 
     if (this.exampleComponents.indexOf('media') !== -1) {
       mediaLibrary = `/**
-  * Implements hook_theme_suggestions_views_view_unformatted_alter().
-  */
+ * Implements hook_theme_suggestions_views_view_unformatted_alter().
+ */
 function <%= themeNameMachine %>_theme_suggestions_views_view_unformatted__media_library_alter(&$suggestions, &$vars) {
   $suggestions[] = 'views_view_unformatted__media_library__rain';
 }`;
