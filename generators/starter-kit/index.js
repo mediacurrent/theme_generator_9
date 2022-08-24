@@ -153,6 +153,10 @@ module.exports = class extends Generator {
             name: 'Block - Embed (dependencies: Heading)'
           },
           {
+            value: 'form',
+            name: 'Block - Form (dependencies: Heading)'
+          },
+          {
             value: 'gallery-carousel',
             name: 'Block - Gallery Carousel (dependencies: Body Text, Heading)'
           },
@@ -246,6 +250,9 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
         props.howMuchTheme.push('heading', 'hero');
       }
       if (props.howMuchTheme.includes('embed')) {
+        props.howMuchTheme.push('heading');
+      }
+      if (props.howMuchTheme.includes('form')) {
         props.howMuchTheme.push('heading');
       }
       if (props.howMuchTheme.includes('gallery-carousel')) {

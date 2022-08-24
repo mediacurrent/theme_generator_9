@@ -139,6 +139,7 @@ The theme generator allows you to (optionally) add example components / template
 - Block - Card List (dependencies: Button, Card)
 - Block - Carousel / Slider (dependencies: Heading, Hero)
 - Block - Embed (dependencies: Heading)
+- Block - Form (dependencies: Heading)
 - Block - Gallery Carousel (dependencies: Body Text, Heading)
 - Block - Gallery + Lightbox (dependencies: Body Text, Heading, Icons)
 - Block - Hero (dependencies: Body Text, Button, Eyebrow, Heading, Media)
