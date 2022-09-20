@@ -16,7 +16,11 @@ module.exports = {
         './src/patterns/global/fonts/**/*.woff2',
         './src/patterns/global/fonts/**/*.eot',
         './src/patterns/global/fonts/**/*.ttf',
-        './src/patterns/global/fonts/**/*.svg'
+        './src/patterns/global/fonts/**/*.svg',
+        './src/vendor/fonts/**/*.woff',
+        './src/vendor/fonts/**/*.svg',
+        './src/vendor/fonts/**/*.ttf',
+        './src/vendor/fonts/**/*.woff',
       ],
       { base: './' }
     )
