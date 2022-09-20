@@ -1,7 +1,17 @@
 // Provide default spacing for Rain paragraphs.
 body {
 
-  .block-content--type-text,
+  .block-content--type-text {
+    ul,
+    ol {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 40px;
+    }
+  }
+
   .node__body {
     margin-bottom: 30px;
     padding: 0 1.5rem;
@@ -16,6 +26,7 @@ body {
     }
   }
 
+  .block-content--type-text,
   .block-content--type-embed,
   .block-content--type-form,
   .block-content--type-map,
