@@ -17,15 +17,28 @@
   'container',
 ] %}
 
-{% set heading = {
-  "heading_level": "3",
-  "modifier": "",
-  "url": "",
-  "title": content.field_title|field_value,
-} %}
-
-{% if content %}
-  {% include '@<%= themeNameMachine %>/body-text/body-text.twig' with {
-    body_text: content.body
-  } only %}
+{% if (content.field_title) %}
+  <div class="container">
+    {%
+      include '@rain_theme/heading/heading.twig' with {
+        "heading": {
+          "title": content.field_title|field_value,
+          "heading_level": "2",
+          "modifier": "heading--section",
+        },
+      } only
+    %}
+  </div>
 {% endif %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  {% block content %}
+    {% if content %}
+      {% include '@rain_theme/body-text/body-text.twig' with {
+        body_text: content.body
+      } only %}
+    {% endif %}
+  {% endblock %}
+</div>
