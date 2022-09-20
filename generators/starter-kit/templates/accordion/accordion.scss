@@ -1,24 +1,6 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
-.faq-container {
-  @include max-width;
-  padding: 0 1.5rem;
-}
-
-.accordion__title {
-  font-size: 28px;
-  font-family: 'Raleway-Bold', sans-serif;
-  font-weight: bold;
-  line-height: 33px;
-  color: $color-blue;
-
-  @include breakpoint($bp-md) {
-    font-size: 42px;
-    line-height: 49px;
-  }
-}
-
 .accordion__wrapper {
   max-width: none;
   position: relative;
