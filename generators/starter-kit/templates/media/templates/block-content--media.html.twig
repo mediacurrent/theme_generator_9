@@ -14,6 +14,7 @@
     'block-content--type-' ~ bundle|clean_class,
     'block-content--' ~ id,
     'block-content--view-mode-' ~ view_mode|clean_class,
+    'container',
   ]
 %}
 
@@ -22,17 +23,15 @@
   {{ title_suffix }}
   {% block content %}
     {% if content.field_title %}
-      <div class="container">
-        {%
-          include '@<%= themeNameMachine %>/heading/heading.twig' with {
-            "heading": {
-              "title": content.field_title,
-              "heading_level": "2",
-              "modifier": "heading--section",
-            },
-          } only
-        %}
-      </div>  
+      {%
+        include '@<%= themeNameMachine %>/heading/heading.twig' with {
+          "heading": {
+            "title": content.field_title|field_value,
+            "heading_level": "2",
+            "modifier": "heading--section",
+          },
+        } only
+      %}
     {% endif %}
     {% set media_type = content.field_media['#items'].entity.bundle() %}
     {% include '@<%= themeNameMachine %>/media/media.twig' with {

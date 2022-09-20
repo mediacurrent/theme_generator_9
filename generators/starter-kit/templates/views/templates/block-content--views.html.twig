@@ -28,7 +28,7 @@
         {%
           include '@<%= themeNameMachine %>/heading/heading.twig' with {
             "heading": {
-              "title": content.field_title,
+              "title": content.field_title|field_value,
               "heading_level": "2",
               "modifier": "heading--section",
             },
@@ -48,7 +48,7 @@
               }
             } only %}
           {% endif %}
-        </div>  
+        </div>
       </div>
     {% endif %}
   {% endblock %}

@@ -26,13 +26,13 @@
         {%
           include '@<%= themeNameMachine %>/heading/heading.twig' with {
             "heading": {
-              "title": content.field_title,
+              "title": content.field_title|field_value,
               "heading_level": "2",
               "modifier": "heading--section",
             },
           } only
         %}
-      </div>  
+      </div>
     {% endif %}
     {% if content.field_slider_item['#items']|length > 1 %}
       {% embed '@<%= themeNameMachine %>/carousel/carousel.twig' with { content: content } only %}
@@ -44,6 +44,6 @@
       {% endembed %}
     {% else %}
       {{ content.field_slider_item }}
-    {% endif %}      
+    {% endif %}
   {% endblock %}
 </div>

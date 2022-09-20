@@ -42,7 +42,7 @@
   {% include '@<%= themeNameMachine %>/carousel/carousel-item.twig' with {
     "item": {
       "image": content.field_media,
-      "title": content.field_title,
+      "title": content.field_title|field_value,
       "button": {
         "text": content.field_link[0]['#title'],
         "url": content.field_link[0]['#url']
@@ -56,11 +56,11 @@
         "image": content.field_media
       },
       "eyebrow": {
-        "text": content.field_subhead|render|trim is not empty ? content.field_subhead,
+        "text": content.field_subhead|render|trim is not empty ? content.field_subhead|field_value,
         "modifier": "hero__eyebrow"
       },
       "heading": {
-        "title": content.field_title,
+        "title": content.field_title|field_value,
         "level": "2",
         "modifier": "hero__heading"
       },

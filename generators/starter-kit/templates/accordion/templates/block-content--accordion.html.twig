@@ -16,7 +16,6 @@
     'block-content--view-mode-' ~ view_mode|clean_class,
     'horizontal-align',
     'container',
-    'faq-container',
   ]
 %}
 
@@ -28,9 +27,9 @@
       {%
         include '@<%= themeNameMachine %>/heading/heading.twig' with {
           "heading": {
-            "title": content.field_title,
+            "title": content.field_title|field_value,
             "heading_level": "2",
-            "modifier": "accordion__title heading--section",
+            "modifier": "heading--section",
           },
         } only
       %}

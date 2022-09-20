@@ -23,7 +23,7 @@
   {{ title_suffix }}
   {% block content %}
     {% embed '@<%= themeNameMachine %>/gallery-lightbox/gallery-lightbox.twig' with {
-        section_title: content.field_title,
+        section_title: content.field_title|field_value,
         intro_text: content.body,
         content: content
       } only %}

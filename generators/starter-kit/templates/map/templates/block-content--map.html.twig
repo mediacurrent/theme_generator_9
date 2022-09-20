@@ -23,7 +23,7 @@
     {% include '@<%= themeNameMachine %>/map/map.twig' with {
       "map": {
         "map_embed": content.field_location,
-        "location": content.field_title,
+        "location": content.field_title|field_value,
         "address": content.body,
         "eyebrow": {
           "text": content.field_short_title,
