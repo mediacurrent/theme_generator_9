@@ -17,10 +17,10 @@ module.exports = {
         './src/patterns/global/fonts/**/*.eot',
         './src/patterns/global/fonts/**/*.ttf',
         './src/patterns/global/fonts/**/*.svg',
-        './src/vendor/fonts/**/*.woff',
-        './src/vendor/fonts/**/*.svg',
-        './src/vendor/fonts/**/*.ttf',
-        './src/vendor/fonts/**/*.woff',
+        './src/vendor/slickjs/fonts/**/*.woff',
+        './src/vendor/slickjs/fonts/**/*.svg',
+        './src/vendor/slickjs/fonts/**/*.ttf',
+        './src/vendor/slickjs/fonts/**/*.woff',
       ],
       { base: './' }
     )

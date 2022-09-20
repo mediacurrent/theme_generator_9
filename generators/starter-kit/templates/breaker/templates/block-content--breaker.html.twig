@@ -13,7 +13,8 @@
     'block-content',
     'block-content--type-' ~ bundle|clean_class,
     'block-content--' ~ id,
-    'block-content--view-mode-' ~ view_mode|clean_class
+    'block-content--view-mode-' ~ view_mode|clean_class,
+    'container',
   ]
 %}
 
@@ -29,13 +30,13 @@
 %}
 
 {% set eyebrow_content = {
-    text: content.field_short_title,
+    text: content.field_short_title|field_value,
     modifier: 'card__eyebrow'
   }
 %}
 
 {% set heading_content = {
-    title: content.field_title,
+    title: content.field_title|field_value,
     icon: content.field_icon,
     heading_level: '2',
     modifier: 'card__title'
@@ -43,7 +44,7 @@
 %}
 
 {% set subheading_content = {
-    title: content.field_subhead,
+    title: content.field_subhead|field_value,
     heading_level: '3',
     modifier: 'card__subhead'
   }
