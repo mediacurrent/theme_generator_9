@@ -25,8 +25,8 @@
     {% if carousel_items %}
       {# carousel_items, carousel_thumbs provided by preprocess #}
       {% include '@<%= themeNameMachine %>/gallery-carousel/gallery-carousel.twig' with {
-          "section_title": content.field_title,
-          "intro_text": content.field_subhead,
+          "section_title": content.field_title|field_value,
+          "intro_text": content.field_subhead|field_value,
           "carousel_items": carousel_items,
           "carousel_nav_items": carousel_thumbs
       } only %}

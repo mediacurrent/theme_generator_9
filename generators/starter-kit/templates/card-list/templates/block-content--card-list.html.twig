@@ -14,7 +14,7 @@
     'block-content--type-' ~ bundle|clean_class,
     'block-content--' ~ id,
     'block-content--view-mode-' ~ view_mode|clean_class,
-    'content'
+    'container'
   ]
 %}
 
@@ -25,17 +25,17 @@
   {{ title_suffix }}
   {% block content %}
     {% if layout == 'carousel' %}
-      {% embed '@<%= themeNameMachine %>/card-carousel/card-carousel.twig' with { section_title: content.field_title, content: content } only %}
+      {% embed '@<%= themeNameMachine %>/card-carousel/card-carousel.twig' with { section_title: content.field_title|field_value, content: content } only %}
         {% block carousel_items %}
           {% for i in content.field_card['#items'] %}
             <li class="card-carousel-item">
               {{ content.field_card[loop.index0] }}
-            </li>  
+            </li>
           {% endfor %}
         {% endblock %}
       {% endembed %}
     {% else %}
-      {% embed '@<%= themeNameMachine %>/card-list/card-list.twig' with { section_title: content.field_title, content: content } only %}
+      {% embed '@<%= themeNameMachine %>/card-list/card-list.twig' with { section_title: content.field_title|field_value, content: content } only %}
         {% block card_items %}
           {% for i in content.field_card['#items'] %}
             <li class="card-list__item">
@@ -54,6 +54,6 @@
           } only %}
         </div>
       {% endif %}
-    {% endif %}  
+    {% endif %}
   {% endblock %}
 </div>

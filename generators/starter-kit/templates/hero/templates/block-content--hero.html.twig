@@ -27,11 +27,11 @@
           "image": content.field_media
         },
         "eyebrow": {
-          "text": content.field_subhead|render|trim is not empty ? content.field_subhead,
+          "text": content.field_subhead|render|trim is not empty ? content.field_subhead|field_value,
           "modifier": "hero__eyebrow"
         },
         "heading": {
-          "title": content.field_title,
+          "title": content.field_title|field_value,
           "level": "2",
           "modifier": "hero__heading"
         },

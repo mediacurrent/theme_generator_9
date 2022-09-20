@@ -40,7 +40,7 @@
 #}
 {% embed '@<%= themeNameMachine %>/accordion/accordion-item.twig' with {
   "item": {
-    "heading": content.field_title
+    "heading": content.field_title|field_value
   },
   "content": content
 } only %}

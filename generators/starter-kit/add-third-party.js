@@ -19,7 +19,7 @@ module.exports = function addThirdParty(libraries) {
         css: {
           component: {
             ['dist/css/slick.css']: {},
-            ['dist/css/slick.css-theme']: {}
+            ['dist/css/slick-theme.css']: {}
           }
         },
         js: {

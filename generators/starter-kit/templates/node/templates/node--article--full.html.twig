@@ -96,13 +96,13 @@
       {%
         include '@<%= themeNameMachine %>/heading/heading.twig' with {
           "heading": {
-            "title": content.field_subhead,
+            "title": content.field_subhead|field_value,
             "heading_level": "2",
             "modifier": "heading--section",
           },
         } only
       %}
-    </div>  
+    </div>
   {% endif %}
 
   <div{{ content_attributes.addClass('node__body', 'container') }}>
