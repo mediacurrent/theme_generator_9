@@ -1,6 +1,6 @@
 // Provide default spacing for Rain paragraphs.
 body {
-  
+
   .block-content--type-text,
   .node__body {
     margin-bottom: 30px;
@@ -26,7 +26,6 @@ body {
   .block-content--type-gallery,
   .block-content--type-gallery-carousel,
   .block-content--type-hero,
-  .block-content--type-slider,
   .block-content--type-card-list,
   .block-content--type-breaker,
   .block-content--type-teaser {
@@ -35,6 +34,10 @@ body {
     .paragraph--type--card {
       margin-bottom: 0;
     }
+  }
+
+  .block-content--type-slider {
+    margin-bottom: 100px;
   }
 
   .block-content--type-gallery {
