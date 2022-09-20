@@ -54,10 +54,6 @@
   cursor: pointer;
 }
 
-.gallery-lightbox__title {
-  @include wire-large-heading;
-}
-
 // Colorbox overrides
 #cboxLoadedContent {//sass-lint:disable-line no-ids
   background: #000;
