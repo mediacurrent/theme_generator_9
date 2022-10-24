@@ -219,10 +219,10 @@ Provided by default are seven npm scripts that point to Gulp tasks. We run gulp 
     npm run compress
     ```
 
-1. Build Pattern Lab.
+1. Build Storybook style guide.
 
     ```bash
-    npm run styleguide
+    npm run storybook
     ```
 
 1. Lint Sass and JS files.

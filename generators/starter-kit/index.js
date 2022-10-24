@@ -398,28 +398,11 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
   }
 
   install() {
-    var colorbox = '';
-    var slick = '';
     var sliderParagraph = '';
     var viewsBlock = '';
     var galleryCarouselBlock = '';
     var latestNews = '';
     var mediaLibrary = '';
-
-    // If `carousel` or `gallery-carousel` is selected, attempt to link up the SlickJS.
-    if (this.exampleComponents.indexOf('carousel') !== -1 || this.exampleComponents.indexOf('gallery-carousel') !== -1) {
-      slick = '<script type="text/javascript" src="../../../src/vendor/slickjs/slick.min.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick.css"/><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick-theme.css"/>';
-    }
-    // If `gallery-lightbox` is selected, attempt to link up the Colorbox.
-    if (this.exampleComponents.indexOf('gallery-lightbox') !== -1) {
-      colorbox = '<script type="text/javascript" src="../../../src/vendor/colorbox/jquery.colorbox.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/colorbox/colorbox.css"/>';
-    }
-
-    replace({
-      files: this.destinationPath('src/styleguide/meta/_foot.twig'),
-      from: [/<!-- Colorbox placeholder -->/g, /<!-- SlickJS placeholder -->/g],
-      to: [colorbox, slick],
-    })
 
     // .theme component-specific updates.
 

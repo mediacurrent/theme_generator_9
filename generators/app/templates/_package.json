@@ -5,7 +5,6 @@
     "build": "gulp",
     "compile": "gulp compile",
     "watch": "gulp watch",
-    "styleguide": "gulp styleguide",
     "compress": "gulp compress",
     "lint": "gulp lint",
     "scss-fix": "npx stylelint './src/**/*.scss' --fix",
