@@ -8,7 +8,7 @@ const rename = require('gulp-rename');
 
 // Export our tasks.
 module.exports = {
-  // Move any fonts to where Pattern Lab is lookinging for them.
+  // Move any fonts to where Storybook is looking for them.
   moveFonts: function() {
     return src(
       [

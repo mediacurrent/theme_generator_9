@@ -273,14 +273,10 @@ module.exports = class extends Generator {
     // Need to see if we still need this.
     this.npmInstall();
 
-    // Install the following node modules specifically for Pattern Lab
-    // and theme generator.
+    // Install the following node modules specifically for theme generator.
     // Adding the `yo generator-mc-d9-theme` so users can quickly
     // run the component sub-generator locally.
     const npmArray = [
-      '@pattern-lab/core',
-      '@pattern-lab/engine-twig-php',
-      '@pattern-lab/uikit-workshop',
       'yo',
       'generator-mc-d9-theme'
     ];
