@@ -5,7 +5,6 @@ const srcPath = path.resolve(__dirname, "../src/stories/components");
 const loader = new TwingLoaderFilesystem(srcPath);
 const chain = new TwingLoaderChain([loader]);
 const attachLibraryFn = new TwingFunction("attach_library", () => {});
-const translateFn = new TwingFunction("t", () => {});
 const environment = new TwingEnvironment(chain, { autoescape: false, auto_reload: true });
 
 // In storybook we get this returned as an instance of TwigLoaderNull
@@ -16,7 +15,6 @@ if (typeof loader.addPath === "function") {
 }
 
 environment.addFunction(attachLibraryFn);
-environment.addFilter(translateFn);
-
+environment.addFilter(new TwingFilter("t", function (string) { return string; }));
 module.exports = environment;
 module.exports.chain = chain;
