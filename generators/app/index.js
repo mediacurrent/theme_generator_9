@@ -167,6 +167,10 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copy(
+      this.templatePath('static'),
+      this.destinationPath('static')
+    );
+    this.fs.copy(
       this.templatePath('_src/stories/global'),
       this.destinationPath('src/stories/global')
     );
