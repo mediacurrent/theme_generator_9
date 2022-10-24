@@ -4,8 +4,7 @@
  */
 /* eslint-disable max-len */
 
-!((document, Drupal, $) => {
-  'use strict';
+(function ($, Drupal) {
 
   /**
    * Setup and attach the Carousel behaviors.
@@ -41,4 +40,4 @@
       });
     },
   };
-})(document, Drupal, jQuery);
+})(jQuery, Drupal);

@@ -1,8 +1,7 @@
-{{ attach_library('<%= themeNameMachine %>/card') }}
+{{ attach_library('rain_theme/card') }}
 
 <article class="card {{ card.modifier ? ' ' ~ card.modifier }}
-  {{- attributes ? ' ' ~ attributes.class -}}"
-  {{- attributes ? attributes|without(class) -}}>
+  {{- attributes ? ' ' ~ attributes.class -}}">
 
   {% block card_media %}
     {% if card.media.image or card.media.video %}
@@ -14,27 +13,27 @@
         {% endif %}
           {{ card.media.caption }}
       </div>
-    {% endif %}  
+    {% endif %}
   {% endblock %}
 
   <div class="card__content">
     {% if card.eyebrow %}
       {%
-        include '@<%= themeNameMachine %>/eyebrow/eyebrow.twig' with {
+        include '@rain_theme/eyebrow/eyebrow.twig' with {
           "eyebrow": card.eyebrow
         } only
       %}
     {% endif %}
 
     {%
-      include '@<%= themeNameMachine %>/heading/heading.twig' with {
+      include '@rain_theme/heading/heading.twig' with {
         "heading": card.heading
       } only
     %}
 
-    {% if card.subhead.title|render %}
+    {% if card.subhead.title %}
       {%
-        include '@<%= themeNameMachine %>/heading/heading.twig' with {
+        include '@rain_theme/heading/heading.twig' with {
           "heading": card.subhead
         } only
       %}
@@ -42,7 +41,7 @@
 
     {% if card.summary_text %}
       {%
-        include '@<%= themeNameMachine %>/body-text/body-text.twig' with {
+        include '@rain_theme/body-text/body-text.twig' with {
           "body_text": card.summary_text
         } only
       %}

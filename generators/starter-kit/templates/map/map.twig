@@ -1,8 +1,7 @@
-{{ attach_library('<%= themeNameMachine %>/map') }}
+{{ attach_library('rain_theme/map') }}
 
 {% if map.address %}
-  <section class="map map--2col{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+  <section class="map map--2col{{ attributes ? ' ' ~ attributes.class}}">
     <div class="map__wrapper">
       <div class="map__embed">
         {{ map.map_embed }}
@@ -11,7 +10,7 @@
     <div class="map__text">
       {% if map.eyebrow %}
         {%
-          include '@<%= themeNameMachine %>/eyebrow/eyebrow.twig' with {
+          include '@rain_theme/eyebrow/eyebrow.twig' with {
             "eyebrow": map.eyebrow
           } only
         %}
@@ -28,8 +27,7 @@
     </div>
   </section>
 {% else %}
-  <section class="map map--full{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+  <section class="map map--full{{ attributes ? ' ' ~ attributes.class}}">
     <div class="map__embed">
       {{ map.map_embed }}
     </div>

@@ -1,11 +1,10 @@
-{{ attach_library('<%= themeNameMachine %>/accordion') }}
+{{ attach_library('rain_theme/accordion') }}
 
-<section class="accordion__wrapper{{ attributes ? ' ' ~ attributes.class}}"
-{{- attributes ? attributes|without(class) -}}>
+<section class="accordion__wrapper{{ attributes ? ' ' ~ attributes.class }}">
   {% block accordion_items %}
     {% for item in items %}
       {%
-        include '@<%= themeNameMachine %>/accordion/accordion-item.twig' with {item: item} only
+        include '@rain_theme/accordion/accordion-item.twig' with {item: item} only
       %}
     {% endfor %}
   {% endblock %}

@@ -1,8 +1,8 @@
-{{ attach_library('<%= themeNameMachine %>/card-list') }}
+{{ attach_library('rain_theme/card-list') }}
 
 {% if section_title %}
     {%
-      include '@<%= themeNameMachine %>/heading/heading.twig' with {
+      include '@rain_theme/heading/heading.twig' with {
         "heading": {
           "title": section_title,
           "heading_level": 2,
@@ -17,7 +17,7 @@
       {% for item in items %}
         <li class="card-list__item">
           {%
-            include '@<%= themeNameMachine %>/card/card.twig' with {
+            include '@rain_theme/card/card.twig' with {
               "card": item.card
             } only
           %}

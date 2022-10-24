@@ -1,11 +1,9 @@
-{% import '@<%= themeNameMachine %>/icons/icons-macro.twig' as icons %}
-
 <article class="accordion">
   <button type="button" class="accordion__toggle" aria-controls="accordion__content-{{ item.accordion_instance }}" aria-expanded="false" id="accordion__toggle-{{ item.accordion_instance }}" aria-selected="false">
     <span class="accordion__heading">
       {{ item.heading }}
     </span>
-    {{ icons.get('accordion__arrow'|lower) }}
+    <svg width="23" height="13" xmlns="http://www.w3.org/2000/svg"><path d="M11.5 13c-.412 0-.824-.156-1.139-.468L.471 2.726a1.588 1.588 0 010-2.258 1.62 1.62 0 012.279 0l8.75 8.677L20.25.468a1.62 1.62 0 012.278 0c.63.623.63 1.635 0 2.259l-9.89 9.806A1.613 1.613 0 0111.5 13z"/></svg>
   </button>
   <div class="accordion__content" id="accordion__content-{{ item.accordion_instance }}" aria-hidden="true" aria-labelledby="accordion__content-{{ item.accordion_instance }}">
     {% block accordion_content %}

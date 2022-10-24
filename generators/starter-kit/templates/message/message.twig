@@ -1,7 +1,7 @@
-{{ attach_library('<%= themeNameMachine %>/message') }}
+{{ attach_library('rain_theme/message') }}
 
 {% for type, messages in message_list %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }} class="message message--{{ type }}">
+  <div role="contentinfo" aria-label="{{ status_headings[type] }}" class="message message--{{ type }}">
     {% if type == 'error' %}
       <div role="alert">
     {% endif %}

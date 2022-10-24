@@ -1,8 +1,8 @@
-{{ attach_library('<%= themeNameMachine %>/gallery-carousel') }}
+{{ attach_library('rain_theme/gallery-carousel') }}
 
 {% if section_title %}
   {%
-    include '@<%= themeNameMachine %>/heading/heading.twig' with {
+    include '@rain_theme/heading/heading.twig' with {
       "heading": {
         "title": section_title,
         "heading_level": 2,
@@ -14,15 +14,14 @@
 
 {% if intro_text %}
   {%
-    include '@<%= themeNameMachine %>/body-text/body-text.twig' with {
+    include '@rain_theme/body-text/body-text.twig' with {
       "body_text": intro_text,
       "modifier": "gallery-carousel__intro-text"
     } only
   %}
 {% endif %}
 
-<ul class="gallery-carousel{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+<ul class="gallery-carousel{{ attributes ? ' ' ~ attributes.class}}">
 
   {% for item in carousel_items %}
     <li class="gallery-carousel-item">
