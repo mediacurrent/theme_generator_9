@@ -1,4 +1,4 @@
-{{ attach_library('rain_theme/teaser') }}
+{{ attach_library('<%= themeNameMachine %>/teaser') }}
 
 {%
   set classes = [
@@ -16,7 +16,7 @@
   {% endif %}
   <div class="teaser__content">
     {%
-      include '@rain_theme/heading/heading.twig' with {
+      include '@<%= themeNameMachine %>/heading/heading.twig' with {
         "heading": {
           "title": title,
           "heading_level": "2",

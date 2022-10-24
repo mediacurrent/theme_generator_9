@@ -1,4 +1,4 @@
-{{ attach_library('rain_theme/site-footer') }}
+{{ attach_library('<%= themeNameMachine %>/site-footer') }}
 
 <div class="site-footer footer{% if modifier %} {{ modifier }} {% endif %}
   {{- attributes.class ? attributes.class -}}">
@@ -9,7 +9,7 @@
     <div class="site-footer__logo">
       {% if site_branding %}
         {%
-          include '@rain_theme/site-branding/site-branding.twig' with {
+          include '@<%= themeNameMachine %>/site-branding/site-branding.twig' with {
             links: site_branding.link
           } only
         %}
@@ -18,7 +18,7 @@
     <div class="site-footer__text">
       {% if text_block %}
         {%
-          include '@rain_theme/body-text/body-text.twig' with {
+          include '@<%= themeNameMachine %>/body-text/body-text.twig' with {
             body_text: text_block
           } only
         %}
@@ -26,7 +26,7 @@
     </div>
     {% if social %}
       {%
-        include '@rain_theme/social-menu/social-menu.twig' with
+        include '@<%= themeNameMachine %>/social-menu/social-menu.twig' with
           {
             items: social
           }
@@ -38,7 +38,7 @@
       {{ "&copy; " ~ "now"|date("Y")}}, {{ copyright }}
       {% if menu_items %}
         {%
-          include '@rain_theme/menu/menu.twig' with
+          include '@<%= themeNameMachine %>/menu/menu.twig' with
             {
               items: menu_items,
               modifier: 'site-footer__menu',

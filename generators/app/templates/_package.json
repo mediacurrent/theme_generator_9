@@ -1,5 +1,5 @@
 {
-  "name": "rain_theme",
+  "name": "<%= themeName %>",
   "version": "1.0.0",
   "scripts": {
     "build": "gulp",

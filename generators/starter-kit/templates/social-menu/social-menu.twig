@@ -1,6 +1,6 @@
-{{ attach_library('rain_theme/social-menu') }}
+{{ attach_library('<%= themeNameMachine %>/social-menu') }}
 
-{% embed '@rain_theme/menu/menu.twig' with {
+{% embed '@<%= themeNameMachine %>/menu/menu.twig' with {
   items: items,
   modifier: 'site-footer__social'
 } %}

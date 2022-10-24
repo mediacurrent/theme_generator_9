@@ -1,4 +1,4 @@
-{{ attach_library('rain_theme/button') }}
+{{ attach_library('<%= themeNameMachine %>/button') }}
 
 {% if button.url %}
   <a href="{{ button.url }}" class="button{{ button.modifier ? ' ' ~ button.modifier }}">{{ button.text }}</a>

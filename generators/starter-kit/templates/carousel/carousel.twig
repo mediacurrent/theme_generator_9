@@ -1,11 +1,11 @@
-{{ attach_library('rain_theme/carousel') }}
+{{ attach_library('<%= themeNameMachine %>/carousel') }}
 
 <section class="carousel__wrapper{{ attributes ? ' ' ~ attributes.class}}">
   <ul class="carousel__list carousel__slick">
     {% block carousel_items %}
       {% for item in list %}
         {%
-          include '@rain_theme/carousel/carousel-item.twig' with {
+          include '@<%= themeNameMachine %>/carousel/carousel-item.twig' with {
             "item": item
           } only
         %}
