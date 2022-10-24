@@ -12,7 +12,7 @@ module.exports = {
   // Format code based on prettier and eslint configs.
   // https://github.com/prettier/prettier-eslint
   prettier: function() {
-    return src(['./src/patterns/**/**/*.js'], { base: './' })
+    return src(['./src/stories/**/**/*.es6.js'], { base: './' })
       .pipe(prettierFormat())
       .pipe(changed('./', { hasChanged: changed.compareContents }))
       // Update the source JS file with the prettier formatted file.

@@ -12,11 +12,11 @@ module.exports = {
   moveFonts: function() {
     return src(
       [
-        './src/patterns/global/fonts/**/*.woff',
-        './src/patterns/global/fonts/**/*.woff2',
-        './src/patterns/global/fonts/**/*.eot',
-        './src/patterns/global/fonts/**/*.ttf',
-        './src/patterns/global/fonts/**/*.svg',
+        './src/stories/global/fonts/**/*.woff',
+        './src/stories/global/fonts/**/*.woff2',
+        './src/stories/global/fonts/**/*.eot',
+        './src/stories/global/fonts/**/*.ttf',
+        './src/stories/global/fonts/**/*.svg',
         './src/vendor/slickjs/fonts/**/*.eot',
         './src/vendor/slickjs/fonts/**/*.svg',
         './src/vendor/slickjs/fonts/**/*.ttf',

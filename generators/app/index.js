@@ -103,7 +103,7 @@ module.exports = class extends Generator {
     );
 
     // Prompt the user for start kit components. If any are selected
-    // they will be copied over to the patterns folder and the libraries.yml
+    // they will be copied over to the stories folder and the libraries.yml
     // file will be appended with the component library.
     this.composeWith('mc-d9-theme:starter-kit', {
       themeName: this.themeNameMachine
@@ -146,49 +146,45 @@ module.exports = class extends Generator {
       this.destinationPath('.eslintrc.json')
     );
     this.fs.copy(
+      this.templatePath('.eslintignore'),
+      this.destinationPath('.eslintignore')
+    );
+    this.fs.copy(
       this.templatePath('stylelintrc.yml'),
       this.destinationPath('.stylelintrc.yml')
+    );
+    this.fs.copy(
+      this.templatePath('.storybook'),
+      this.destinationPath('.storybook')
     );
     // We need the theme machine name so we can set
     // correct namespaces.
     this.fs.copyTpl(
-      this.templatePath('_patternlab-config.json'),
-      this.destinationPath('patternlab-config.json'),
+      this.templatePath('.storybook/environment.js'),
+      this.destinationPath('.storybook/environment.js'),
       {
         themeNameMachine: this.themeNameMachine
       }
     );
     this.fs.copy(
-      this.templatePath('_src/patterns/global'),
-      this.destinationPath('src/patterns/global')
+      this.templatePath('_src/stories/global'),
+      this.destinationPath('src/stories/global')
     );
     this.fs.copy(
-      this.templatePath('_src/patterns/components'),
-      this.destinationPath('src/patterns/components')
+      this.templatePath('_src/stories/components'),
+      this.destinationPath('src/stories/components')
     );
     this.fs.copy(
-      this.templatePath('_src/patterns/layout/.gitkeep'),
-      this.destinationPath('src/patterns/layout/.gitkeep')
+      this.templatePath('_src/stories/Introduction.stories.mdx'),
+      this.destinationPath('src/stories/Introduction.stories.mdx')
     );
     this.fs.copy(
-      this.templatePath('_src/patterns/pages/.gitkeep'),
-      this.destinationPath('src/patterns/pages/.gitkeep')
-    );
-    this.fs.copy(
-      this.templatePath('_src/assets'),
-      this.destinationPath('src/assets')
-    );
-    this.fs.copy(
-      this.templatePath('_src/styleguide'),
-      this.destinationPath('src/styleguide')
+      this.templatePath('_src/stories/assets'),
+      this.destinationPath('src/stories/assets')
     );
     this.fs.copy(
       this.templatePath('_src/templates'),
       this.destinationPath('src/templates')
-    );
-    this.fs.copy(
-      this.templatePath('_src/vendor'),
-      this.destinationPath('src/vendor')
     );
     this.fs.copy(
       this.templatePath('_src/favicon.ico'),
@@ -229,6 +225,10 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('_gulp-tasks'),
       this.destinationPath('gulp-tasks')
+    );
+    this.fs.copy(
+      this.templatePath('postcss.config.js'),
+      this.destinationPath('postcss.config.js')
     );
 
     // Create the theme files.

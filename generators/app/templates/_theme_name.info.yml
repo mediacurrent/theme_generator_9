@@ -50,9 +50,9 @@ libraries:
 components:
   namespaces:
     <%= themeNameMachine %>:
-      - src/patterns/global
-      - src/patterns/components
-      - src/patterns/pages
+      - src/stories/global
+      - src/stories/components
+      - src/stories/pages
       - src/templates
 
 # This section lists the regions defined in the theme (our base theme) default
