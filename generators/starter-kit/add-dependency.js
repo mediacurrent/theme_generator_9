@@ -79,7 +79,7 @@ module.exports = function addDependency (component, themeNameMachine) {
           }
         },
         js: {
-          [`dist/js/${component}.js`]: {}
+          [`dist/js/${component}.es6.js`]: {}
         },
         dependencies: [
           `${themeNameMachine}/colorbox`
@@ -97,7 +97,7 @@ module.exports = function addDependency (component, themeNameMachine) {
           }
         },
         js: {
-          [`dist/js/${component}.js`]: {}
+          [`dist/js/${component}.es6.js`]: {}
         },
         dependencies: [
           'core/jquery',
