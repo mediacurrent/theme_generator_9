@@ -13,7 +13,7 @@ module.exports = {
   compressAssets: function() {
     return src([
       './src/stories/{global,layout,components}/**/*{.gif,.png,.jpg,.svg}',
-      './src/vendor/slickjs/**/*.gif',
+      './static/images/**/*.gif',
     ])
       .pipe(
         imagemin({
