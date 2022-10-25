@@ -17,9 +17,9 @@ module.exports = {
         './src/stories/global/fonts/**/*.eot',
         './src/stories/global/fonts/**/*.ttf',
         './src/stories/global/fonts/**/*.svg',
-        './static/fonts/fonts/**/*.eot',
-        './static/fonts/fonts/**/*.svg',
-        './static/fonts/fonts/**/*.ttf',
+        './static/fonts/**/*.eot',
+        './static/fonts/**/*.svg',
+        './static/fonts/**/*.ttf',
         './static/fonts/**/*.woff',
       ],
       { base: './' }
@@ -30,6 +30,6 @@ module.exports = {
           return path;
         })
       )
-      .pipe(dest('./dist/fonts'));
+      .pipe(dest('./dist/css/fonts'));
   }
 };
