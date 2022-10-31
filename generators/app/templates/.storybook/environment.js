@@ -1,5 +1,5 @@
 const path = require("path");
-const { TwingEnvironment, TwingFunction, TwingLoaderChain, TwingLoaderFilesystem } = require("twing");
+const { TwingEnvironment, TwingFunction, TwingLoaderChain, TwingLoaderFilesystem, TwingFilter } = require("twing");
 
 const srcPath = path.resolve(__dirname, "../src/stories/components");
 const loader = new TwingLoaderFilesystem(srcPath);
