@@ -21,8 +21,7 @@
   %}
 {% endif %}
 
-<ul class="gallery-carousel{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+<ul class="gallery-carousel{{ attributes ? ' ' ~ attributes.class}}">
 
   {% for item in carousel_items %}
     <li class="gallery-carousel-item">

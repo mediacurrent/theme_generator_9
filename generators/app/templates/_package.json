@@ -5,13 +5,14 @@
     "build": "gulp",
     "compile": "gulp compile",
     "watch": "gulp watch",
-    "styleguide": "gulp styleguide",
     "compress": "gulp compress",
     "lint": "gulp lint",
     "scss-fix": "npx stylelint './src/**/*.scss' --fix",
     "clean": "gulp clean",
     "gulp": "gulp",
-    "generate": "yo mc-d8-theme:component"
+    "generate": "yo mc-d8-theme:component",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "babel": {
     "sourceType": "unambiguous",
@@ -28,8 +29,21 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@pattern-lab/core": "^5.16.2",
+    "@pattern-lab/engine-twig-php": "^5.16.2",
+    "@pattern-lab/uikit-workshop": "^5.16.2",
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/html": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/testing-library": "0.0.13",
+    "babel-loader": "^8.2.5",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
+    "generator-mc-d9-theme": "^2.7.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -46,6 +60,15 @@
     "sass": "^1.32.8",
     "stylelint": "^13.12.0",
     "stylelint-config-standard": "^21.0.0",
-    "stylelint-scss": "^3.19.0"
+    "stylelint-scss": "^3.19.0",
+    "yo": "^4.3.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "postcss": "^8.4.18",
+    "postcss-scss": "^4.0.5",
+    "storybook-addon-sass-postcss": "^0.1.3",
+    "twing": "^2.3.7",
+    "twing-loader": "^2.0.2"
   }
 }

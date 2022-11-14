@@ -1,8 +1,7 @@
 {{ attach_library('<%= themeNameMachine %>/site-footer') }}
 
 <div class="site-footer footer{% if modifier %} {{ modifier }} {% endif %}
-  {{- attributes.class ? attributes.class -}}"
-  {{- attributes ? attributes|without(class) -}}>
+  {{- attributes.class ? attributes.class -}}">
   {{ title_prefix }}
   {{ title_suffix }}
 

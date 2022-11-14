@@ -77,14 +77,6 @@ More info if you're interested in how this stuff works:
 
 If you are building a Drupal 9 theme, make the following updates after your theme has been created:
 
-- Update Pattern Lab to v5.14.0 by updating `package.json` as follows:
-
-    ```json
-    "@pattern-lab/core": "5.14.0",
-    "@pattern-lab/engine-twig-php": "5.14.0",
-    "@pattern-lab/uikit-workshop": "5.14.0",
-    ```
-
 - Remove `node_modules`
 
 - Run `npm install`
@@ -99,7 +91,7 @@ This theme uses [Twig namespaces](https://symfony.com/doc/current/templates.html
 
 The following is supported by your new theme.
 
-- [Pattern Lab (Node)](https://github.com/pattern-lab/patternlab-node/)
+- Storybook
 - Component-Based Workflow
 - ES6+ (With Source Maps)
 - Sass
@@ -172,8 +164,6 @@ This is helpful if you are building out a new theme and would like to quickly cr
 
 **TLDR:** Don't do it if you can avoid it.
 
-Every time Pattern Lab is rebuilt the cache busting strings will change on CSS and JS files. `dependencyGraph.json` will also be updated every single time which makes reviewing pull requests rather difficult.
-
 Optimally we want to gitignore all `/.dist` files and run `npm run build` as part of a continuous integration process.
 
 ### Stuff You Might Want To Change
@@ -187,8 +177,8 @@ This impacts CSS browser prefixes and JavaScript compiled files.
 #### Demo Files
 
 - Swap out `screenshot.png` with your own theme image.
-- Remove or replace the font files in `./src/patterns/global/fonts/`.
-- Change the colors in `./src/patterns/global/colors/`.
+- Remove or replace the font files in `./src/stories/global/fonts/`.
+- Change the colors in `./src/stories/global/colors/`.
 
 ### Go Team
 
@@ -219,10 +209,10 @@ Provided by default are seven npm scripts that point to Gulp tasks. We run gulp 
     npm run compress
     ```
 
-1. Build Pattern Lab.
+1. Build Storybook style guide.
 
     ```bash
-    npm run styleguide
+    npm run storybook
     ```
 
 1. Lint Sass and JS files.

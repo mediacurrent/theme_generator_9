@@ -4,8 +4,7 @@
  */
 /* eslint-disable max-len */
 
-!((document, Drupal, $) => {
-  'use strict';
+(function ($, Drupal) {
 
   /**
    * Setup and attach the Filter Accordion behaviors.
@@ -14,7 +13,6 @@
    */
   Drupal.behaviors.accordion = {
     attach: function(context) {
-
       const self = this;
       const $accordions = $('.accordion', context);
 
@@ -49,4 +47,5 @@
       }
     },
   };
-})(document, Drupal, jQuery);
+
+})(jQuery, Drupal);

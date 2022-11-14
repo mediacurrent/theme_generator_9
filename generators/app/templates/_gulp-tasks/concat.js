@@ -13,8 +13,7 @@ module.exports = {
     return (
       src([
         './dist/css/*.css',
-        '!./dist/css/all.css',
-        '!./dist/css/pattern-scaffolding.css'
+        '!./dist/css/all.css'
       ])
         .pipe(sourcemaps.init())
         // Reorder the files so global is first.

@@ -1,8 +1,7 @@
 {{ attach_library('<%= themeNameMachine %>/card') }}
 
 <article class="card {{ card.modifier ? ' ' ~ card.modifier }}
-  {{- attributes ? ' ' ~ attributes.class -}}"
-  {{- attributes ? attributes|without(class) -}}>
+  {{- attributes ? ' ' ~ attributes.class -}}">
 
   {% block card_media %}
     {% if card.media.image or card.media.video %}
@@ -14,7 +13,7 @@
         {% endif %}
           {{ card.media.caption }}
       </div>
-    {% endif %}  
+    {% endif %}
   {% endblock %}
 
   <div class="card__content">
@@ -32,7 +31,7 @@
       } only
     %}
 
-    {% if card.subhead.title|render %}
+    {% if card.subhead.title %}
       {%
         include '@<%= themeNameMachine %>/heading/heading.twig' with {
           "heading": card.subhead

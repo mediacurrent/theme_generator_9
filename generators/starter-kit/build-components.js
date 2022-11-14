@@ -24,7 +24,7 @@ module.exports = async function buildComponents({
         app.templatePath(`${component}`),
         `!${app.templatePath(`${component}`)}/templates`
       ],
-      app.destinationPath(`src/patterns/components/${component}`),
+      app.destinationPath(`src/stories/components/${component}`),
       {
         themeNameMachine: app.themeNameMachine
       }

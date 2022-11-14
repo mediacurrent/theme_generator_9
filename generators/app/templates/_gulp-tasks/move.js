@@ -8,19 +8,19 @@ const rename = require('gulp-rename');
 
 // Export our tasks.
 module.exports = {
-  // Move any fonts to where Pattern Lab is lookinging for them.
+  // Move any fonts to where Storybook is looking for them.
   moveFonts: function() {
     return src(
       [
-        './src/patterns/global/fonts/**/*.woff',
-        './src/patterns/global/fonts/**/*.woff2',
-        './src/patterns/global/fonts/**/*.eot',
-        './src/patterns/global/fonts/**/*.ttf',
-        './src/patterns/global/fonts/**/*.svg',
-        './src/vendor/slickjs/fonts/**/*.eot',
-        './src/vendor/slickjs/fonts/**/*.svg',
-        './src/vendor/slickjs/fonts/**/*.ttf',
-        './src/vendor/slickjs/fonts/**/*.woff',
+        './src/stories/global/fonts/**/*.woff',
+        './src/stories/global/fonts/**/*.woff2',
+        './src/stories/global/fonts/**/*.eot',
+        './src/stories/global/fonts/**/*.ttf',
+        './src/stories/global/fonts/**/*.svg',
+        './static/fonts/**/*.eot',
+        './static/fonts/**/*.svg',
+        './static/fonts/**/*.ttf',
+        './static/fonts/**/*.woff',
       ],
       { base: './' }
     )
@@ -30,6 +30,6 @@ module.exports = {
           return path;
         })
       )
-      .pipe(dest('./dist/fonts'));
+      .pipe(dest('./dist/css/fonts'));
   }
 };

@@ -78,7 +78,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'social-menu',
-            name: 'Layout - Social Menu (dependencies: Icons)'
+            name: 'Layout - Social Menu'
           },
           {
             value: 'utility-nav',
@@ -110,7 +110,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'pager',
-            name: 'Drupal - Pager (dependencies: Icons)'
+            name: 'Drupal - Pager'
           },
           {
             value: 'search-api-results',
@@ -118,7 +118,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'search-box',
-            name: 'Drupal - Search Box (dependencies: Icons)'
+            name: 'Drupal - Search Box'
           },
           {
             value: 'tabs',
@@ -130,7 +130,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'accordion',
-            name: 'Block - Accordion (dependencies: Heading, Icons)'
+            name: 'Block - Accordion (dependencies: Heading)'
           },
           {
             value: 'breaker',
@@ -162,7 +162,7 @@ module.exports = class extends Generator {
           },
           {
             value: 'gallery-lightbox',
-            name: 'Block - Gallery + Lightbox (dependencies: Body Text, Heading, Icons)'
+            name: 'Block - Gallery + Lightbox (dependencies: Body Text, Heading)'
           },
           {
             value: 'hero',
@@ -235,7 +235,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       // Check to see if any of the components that need dependencies
       // are selected.
       if (props.howMuchTheme.includes('accordion')) {
-        props.howMuchTheme.push('heading', 'icons');
+        props.howMuchTheme.push('heading');
       }
       if (props.howMuchTheme.includes('breaker')) {
         props.howMuchTheme.push('card');
@@ -259,7 +259,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
         props.howMuchTheme.push('body-text', 'heading');
       }
       if (props.howMuchTheme.includes('gallery-lightbox')) {
-        props.howMuchTheme.push('body-text', 'heading', 'icons');
+        props.howMuchTheme.push('body-text', 'heading');
       }
       if (props.howMuchTheme.includes('hero')) {
         props.howMuchTheme.push('body-text', 'button', 'eyebrow', 'heading', 'media');
@@ -279,20 +279,11 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       if (props.howMuchTheme.includes('page-title')) {
         props.howMuchTheme.push('heading');
       }
-      if (props.howMuchTheme.includes('pager')) {
-        props.howMuchTheme.push('icons');
-      }
-      if (props.howMuchTheme.includes('search-box')) {
-        props.howMuchTheme.push('icons');
-      }
       if (props.howMuchTheme.includes('site-footer')) {
         props.howMuchTheme.push('body-text', 'menu', 'site-branding', 'social-menu', 'utility-nav');
       }
       if (props.howMuchTheme.includes('site-header')) {
         props.howMuchTheme.push('breaker', 'l-flex', 'main-menu', 'utility-nav', 'site-branding');
-      }
-      if (props.howMuchTheme.includes('social-menu')) {
-        props.howMuchTheme.push('icons');
       }
       if (props.howMuchTheme.includes('teaser')) {
         props.howMuchTheme.push('card');
@@ -303,7 +294,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       if (props.howMuchTheme.includes('views')) {
         props.howMuchTheme.push('button', 'heading');
       }
-      
+
       // props.howMuchTheme is an array of all selected options.
       // i.e. [ 'hero', 'tabs', 'messages' ]
       // Remove any duplicate components using uniq().
@@ -407,28 +398,11 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
   }
 
   install() {
-    var colorbox = '';
-    var slick = '';
     var sliderParagraph = '';
     var viewsBlock = '';
     var galleryCarouselBlock = '';
     var latestNews = '';
     var mediaLibrary = '';
-
-    // If `carousel` or `gallery-carousel` is selected, attempt to link up the SlickJS.
-    if (this.exampleComponents.indexOf('carousel') !== -1 || this.exampleComponents.indexOf('gallery-carousel') !== -1) {
-      slick = '<script type="text/javascript" src="../../../src/vendor/slickjs/slick.min.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick.css"/><link rel="stylesheet" type="text/css" href="../../../src/vendor/slickjs/slick-theme.css"/>';
-    }
-    // If `gallery-lightbox` is selected, attempt to link up the Colorbox.
-    if (this.exampleComponents.indexOf('gallery-lightbox') !== -1) {
-      colorbox = '<script type="text/javascript" src="../../../src/vendor/colorbox/jquery.colorbox.js"></script><link rel="stylesheet" type="text/css" href="../../../src/vendor/colorbox/colorbox.css"/>';
-    }
-
-    replace({
-      files: this.destinationPath('src/styleguide/meta/_foot.twig'),
-      from: [/<!-- Colorbox placeholder -->/g, /<!-- SlickJS placeholder -->/g],
-      to: [colorbox, slick],
-    })
 
     // .theme component-specific updates.
 
@@ -449,7 +423,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     $variables['wrapper_class'] = str_replace('-', '_', $views_ref[0]['target_id'] . '-' . $views_ref[0]['display_id'] . '__wrapper');
   }`;
     }
-    
+
     if (this.exampleComponents.indexOf('gallery-carousel') !== -1) {
       galleryCarouselBlock = `// We want to render a gallery carousel.
   if ($block_content->bundle() == 'gallery_carousel') {
@@ -534,6 +508,6 @@ function <%= themeNameMachine %>_theme_suggestions_views_view_unformatted__media
   }
 
   end() {
-   
+
   }
 };

@@ -1,4 +1,0 @@
----
-hidden: true
----
-Social Menu

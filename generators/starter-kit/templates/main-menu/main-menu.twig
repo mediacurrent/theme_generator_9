@@ -48,20 +48,20 @@
     <nav class="main-menu" id="a11y-menu" aria-label="Main menu">
       {% import _self as menus %}
       {% if items %}
-        <ul{{ attributes|without('class') }} role="menu" class="nav menu list-reset">
+        <ul role="menu" class="nav menu list-reset">
           {% for item in items %}
-            <li class="menu-item{{ item.below ? ' menu-item--has-submenu' }}{{ item.in_active_trail ? ' menu-item--active-trail' }}" {{ item.attributes|without('class') }} role="menuitem">
-              <a href="{{ item.url|render ? item.url : '#' }}"{{ item.in_active_trail ? ' class="is-active"' }} {{ item.below ? 'aria-expanded="false" aria-haspopup="true"'}}>{% if item.title %}{{ item.title }}{% else %}{{ item.text }}{% endif %}</a>
+            <li class="menu-item{{ item.below ? ' menu-item--has-submenu' }}{{ item.in_active_trail ? ' menu-item--active-trail' }}" role="menuitem">
+              <a href="{{ item.url ? item.url : '#' }}"{{ item.in_active_trail ? ' class="is-active"' }} {{ item.below ? 'aria-expanded="false" aria-haspopup="true"'}}>{% if item.title %}{{ item.title }}{% else %}{{ item.text }}{% endif %}</a>
 
                 {% if item.below %}
                   <button class="menu-item-toggle">
                     <svg aria-hidden="true" class="menu-item-toggle__icon" xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="0 0 30 22"><path fill="#FFFFFF" d="M0 22L15 0l15 22"/></svg>
                     <span class="menu-item-toggle__text">Show/Hide {% if item.title %}{{ item.title }}{% else %}{{ item.text }}{% endif %} Sublinks</span>
                   </button>
-                  <ul{{ attributes|without('class') }} role="submenu" class="nav_subnav menu__submenu list-reset">
+                  <ul role="submenu" class="nav_subnav menu__submenu list-reset">
                     {% for link in item.below %}
-                      <li class="menu__submenu-item" {{ link.attributes|without('class') }} role="menuitem">
-                        <a href="{{ link.url|render ? link.url : '#' }}">{% if link.title %}{{ link.title }}{% else %}{{ link.text }}{% endif %}</a>
+                      <li class="menu__submenu-item" role="menuitem">
+                        <a href="{{ link.url ? link.url : '#' }}">{% if link.title %}{{ link.title }}{% else %}{{ link.text }}{% endif %}</a>
                       </li>
                     {% endfor %}
                   </ul>

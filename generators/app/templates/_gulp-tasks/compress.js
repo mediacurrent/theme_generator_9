@@ -12,8 +12,8 @@ module.exports = {
   // Compress svg/png/jpg files.
   compressAssets: function() {
     return src([
-      './src/patterns/{global,layout,components}/**/*{.gif,.png,.jpg,.svg}',
-      './src/vendor/slickjs/**/*.gif',
+      './src/stories/{global,layout,components}/**/*{.gif,.png,.jpg,.svg}',
+      './static/images/**/*.gif',
     ])
       .pipe(
         imagemin({

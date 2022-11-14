@@ -1,8 +1,7 @@
 {{ attach_library('<%= themeNameMachine %>/map') }}
 
 {% if map.address %}
-  <section class="map map--2col{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+  <section class="map map--2col{{ attributes ? ' ' ~ attributes.class}}">
     <div class="map__wrapper">
       <div class="map__embed">
         {{ map.map_embed }}
@@ -28,8 +27,7 @@
     </div>
   </section>
 {% else %}
-  <section class="map map--full{{ attributes ? ' ' ~ attributes.class}}"
-  {{- attributes ? attributes|without(class) -}}>
+  <section class="map map--full{{ attributes ? ' ' ~ attributes.class}}">
     <div class="map__embed">
       {{ map.map_embed }}
     </div>

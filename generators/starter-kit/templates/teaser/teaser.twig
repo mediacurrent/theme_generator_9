@@ -1,5 +1,4 @@
 {{ attach_library('<%= themeNameMachine %>/teaser') }}
-{% import '@<%= themeNameMachine %>/icons/icons-macro.twig' as icons %}
 
 {%
   set classes = [
@@ -35,7 +34,7 @@
       </div>
     {% endif %}
     {% if link %}
-      <a class="teaser__link" href="{{ link }}"> Read more {{ icons.get('icon-chevron') }}</a>
+      <a class="teaser__link" href="{{ link }}">Read more</a>
     {% endif %}
   </div>
 </div>

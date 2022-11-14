@@ -20,18 +20,6 @@ base theme: <%= baseTheme %>
 # This section controls the libraries for your theme. For full documentation,
 # see https://www.drupal.org/node/2216195
 
-# The "libraries-override:" section will allow you to:
-# - Replace an entire library.
-# - Remove an entire library.
-# - Replace an asset in a library with another asset.
-# - Remove an asset from a library.
-libraries-override:
-  system/base:
-    css:
-      component:
-        # Replace one file with another.
-        /core/themes/stable/css/system/components/hidden.module.css: dist/css/hidden.css
-
 # The "libraries-extend:" section will allow you to add your own JS or CSS to
 # existing libraries.
 # libraries-extend:
@@ -50,9 +38,9 @@ libraries:
 components:
   namespaces:
     <%= themeNameMachine %>:
-      - src/patterns/global
-      - src/patterns/components
-      - src/patterns/pages
+      - src/stories/global
+      - src/stories/components
+      - src/stories/pages
       - src/templates
 
 # This section lists the regions defined in the theme (our base theme) default

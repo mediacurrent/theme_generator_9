@@ -27,9 +27,8 @@ module.exports = {
   // Compile Sass.
   compileSass: function() {
     return src([
-        './src/patterns/**/**/*.scss',
-        './src/vendor/**/*.css',
-        './src/styleguide/*.scss'
+        './src/stories/**/**/*.scss',
+        './static/**/*.css'
       ])
       .pipe(sass().on('error', handleError))
       .pipe(
@@ -49,7 +48,7 @@ module.exports = {
 
   // Compile JavaScript.
   compileJS: function() {
-    return src(['./src/patterns/**/**/*.js', './src/vendor/**/*.js'], { base: './' })
+    return src(['./src/stories/**/**/*.es6.js', './static/**/*.js'], { base: './' })
       .pipe(sourcemaps.init())
       .pipe(babel())
       .pipe(

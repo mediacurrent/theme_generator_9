@@ -66,7 +66,7 @@
     // If ESlint considers a file to be a Node module one 'use strict'
     // is needed at the top of the file. If not 'use strict' needs to
     // be added at the top of the function scope.
-    "strict": ["error", "safe"],
+    "strict": ["off"],
 
     // Prohibit use of a variable before it is defined.
     "no-undef": "error",

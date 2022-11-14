@@ -181,7 +181,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     this.fs.copyTpl(
       this.templatePath('_component/_component.json'),
       // eslint-disable-next-line max-len
-      this.destinationPath('src/patterns/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.json'),
+      this.destinationPath('src/stories/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.json'),
       {
         name: this.componentName.raw,
         dashed: this.componentName.dashed
@@ -190,7 +190,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     this.fs.copyTpl(
       this.templatePath('_component/_component.scss'),
       // eslint-disable-next-line max-len
-      this.destinationPath('src/patterns/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.scss'),
+      this.destinationPath('src/stories/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.scss'),
       {
         name: this.componentName.raw,
         dashed: this.componentName.dashed
@@ -199,7 +199,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
     this.fs.copyTpl(
       this.templatePath('_component/_component.twig'),
       // eslint-disable-next-line max-len
-      this.destinationPath('src/patterns/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.twig'),
+      this.destinationPath('src/stories/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.twig'),
       {
         dashed: this.componentName.dashed,
         themeNameMachine: this.themeNameMachine
@@ -209,7 +209,7 @@ ${chalk.blue('Make sure you\'re running this command from your theme root.')}`
       this.fs.copyTpl(
         this.templatePath('_component/_component.ejs'),
         // eslint-disable-next-line max-len
-        this.destinationPath('src/patterns/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.js'),
+        this.destinationPath('src/stories/components/' + this.componentName.dashed + '/' + this.componentName.dashed + '.js'),
         {
           camel: _.camelCase(this.componentName.raw),
           dashed: this.componentName.dashed,
