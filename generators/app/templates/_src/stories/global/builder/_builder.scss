@@ -1,102 +1,48 @@
-.layout-builder-form {
 
-  .layout-builder__message > .container {
-    max-width: 100%;
-  }
-
-  .button {
-    padding: 5px 8px;
-  }
-}
-
+// Shrink help block text so it doesn't take up so much space.
 .block-help-block {
   font-size: 80%;
   font-style: italic;
-  padding: 10px 1.5rem 0;
 }
 
-.layout-builder {
-  margin: 10px;
+// Make LB browser icons look better.
+.layout-builder-browser-block-item {
+  width: calc(45% - 2px);
+  padding: 10px;
+  text-decoration: none;
 
-  & > .container {
-    max-width: 100%;
-  }
-
-  .message--warning {
-    margin: 0 0 10px;
-  }
-}
-
-.layout-builder__link {
-  margin-bottom: 10px;
-}
-
-#drupal-off-canvas {
-
-  .form-search {
-    margin: 20px 0;
+  img {
     width: 100%;
-    font-size: inherit;
+    margin-bottom: 10px;
   }
+}
 
-  .layout-builder-browser-block-item {
-    text-align: center;
-    display: block;
-    padding-bottom: 5px;
+// Reposition section links slightly.
+.layout-builder__link--remove {
+  top: -23px;
+}
 
-    &:hover {
-      color: #fff;
-      text-decoration: none;
-    }
+.layout-builder__link--configure {
+  top: -23px;
+}
 
-    img {
-      margin-bottom: 10px;
-      width: 100%;
-      cursor: pointer;
+// Hide handle from layout_builder_modal overrides.css
+#layout-builder-modal a.tabledrag-handle .handle {
+  display: none;
+}
 
-      &:hover {
-        transition-property: opacity;
-        transition-duration: 500ms;
-        opacity: 0.8;
-      }
-    }
+// Override Media modal image/video links.
+.glb-media-library-menu {
+  width: 10em !important;
+
+  > li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 13px;
   }
+}
 
-  .layout-builder-remove-block {
-    padding-top: 20px;
-  }
-
-  .layout-selection {
-    margin-top: 20px;
-  }
-
-  svg {
-    margin-bottom: 8px;
-    margin-left: 2px;
-  }
-
-  .moderation-sidebar-info p {
-    display: block;
-  }
-
-  .js-layout-builder-filter {
-    margin-bottom: 20px;
-  }
-
-  .js-layout-builder-category {
-
-    & > summary {
-      margin-bottom: 15px;
-      display: block;
-      cursor: pointer;
-    }
-
-    .links li {
-      margin-bottom: 10px;
-    }
-  }
-
-  a {
-    cursor: pointer;
-  }
+// Override Media modal thumb height.
+#layout-builder-modal img {
+  height: 100%;
 }

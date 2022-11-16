@@ -27,7 +27,7 @@ export const ButtonSmall = ButtonTemplate.bind({});
 ButtonSmall.args = {
   "button": {
     "url": "https://www.mediacurrent.com",
-    "modifier": "button--small",
+    "modifier": "btn--small",
     "text": "Small Button"
   }
 };

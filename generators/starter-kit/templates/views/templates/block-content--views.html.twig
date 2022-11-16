@@ -38,8 +38,8 @@
     {% endif %}
     {{ content|without('field_title', 'field_link') }}
     {% if content.field_link[0]['#url'] %}
-      <div class="button__container container">
-        <div class="button__inner">
+      <div class="btn__container container">
+        <div class="btn__inner">
           {% if content.field_link[0]['#url'] %}
             {% include '@<%= themeNameMachine %>/button/button.twig' with {
               "button": {
