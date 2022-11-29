@@ -24,7 +24,7 @@ Carousel.play = async () => {
 Carousel.args = {
   "list": [
     {
-      "image": "<img src='https://source.unsplash.com/G4su92tyImI/1920x600' alt='test image' />",
+      "image": "<img src='./images/gallery7.jpg' width='100%' alt='test image' />",
       "title": "Title Lorem Ipsum Dolor",
       "button": {
         "text": "Button Text",
@@ -32,7 +32,7 @@ Carousel.args = {
       }
     },
     {
-      "image": "<img src='https://source.unsplash.com/BjxBmGBq38o/1920x600' alt='test image' />",
+      "image": "<img src='./images/gallery7.jpg' width='100%' alt='test image' />",
       "title": "Title Lorem Ipsum Dolor",
       "button": {
         "text": "Button Text",
@@ -40,7 +40,7 @@ Carousel.args = {
       }
     },
     {
-      "image": "<img src='https://source.unsplash.com/unQnklrzl80/1920x600' alt='test image' />",
+      "image": "<img src='./images/gallery7.jpg' width='100%' alt='test image' />",
       "title": "Title Lorem Ipsum Dolor",
       "button": {
         "text": "Button Text",

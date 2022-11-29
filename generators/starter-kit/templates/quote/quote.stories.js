@@ -19,7 +19,7 @@ Quote.args = {
   "quote": {
     "modifier_class": "",
     "quote": "“Lorem ipsum urpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Luctus finibus erat nomunny!”",
-    "image": "<img src='https://source.unsplash.com/MMJx78V7xS8/100x100' alt='Photo of person quoted'/>",
+    "image": "<img src='./images/gallery7.jpg' alt='Photo of person quoted'/>",
     "name": "— Author Ipsum, Lorem and Ipsum",
     "job": "My Job Title is Long, Mega Super Ultra Corporation"
   }
@@ -30,7 +30,7 @@ QuoteLeft.args = {
   "quote": {
     "modifier_class": "quote--left",
     "quote": "“Lorem ipsum urpis at luctus finibus, erat lectus convallis velit, at sodales purus lacus quis magna. Luctus finibus erat nomunny!”",
-    "image": "<img src='https://source.unsplash.com/MMJx78V7xS8/100x100' alt='Photo of person quoted'/>",
+    "image": "<img src='./images/gallery7.jpg' alt='Photo of person quoted'/>",
     "name": "— Author Ipsum, Lorem and Ipsum",
     "job": "My Job Title is Long, Mega Super Ultra Corporation"
   }

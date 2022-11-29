@@ -27,7 +27,7 @@ CardList.args = {
         "modifier": "",
         "media": {
           "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
+          "image": "<img src='./images/gallery7.jpg' with='100%' alt='test image' />",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
         },
         "eyebrow": {
@@ -58,7 +58,7 @@ CardList.args = {
         "modifier": "",
         "media": {
           "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
+          "image": "<img src='./images/gallery7.jpg' with='100%' alt='test image' />",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
         },
         "eyebrow": {
@@ -89,7 +89,7 @@ CardList.args = {
         "modifier": "",
         "media": {
           "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
+          "image": "<img src='./images/gallery7.jpg' with='100%' alt='test image' />",
           "caption": "Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper."
         },
         "eyebrow": {

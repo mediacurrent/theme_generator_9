@@ -18,7 +18,7 @@
           rel: 'images',
           transition: 'fade',
           opacity: 0.9,
-          href: $(this).attr('src')
+          href: $(this).attr('rel')
         });
       });
       document.querySelectorAll('.gallery-lightbox-item__expand')
