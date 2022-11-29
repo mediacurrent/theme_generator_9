@@ -25,7 +25,7 @@
 
   {% for item in carousel_items %}
     <li class="gallery-carousel-item">
-      <img src="{{ item.media }}" class="gallery-carousel-item__media" alt="{{ item.media_description }}"/>
+      <img src="{{ item.media }}" class="gallery-carousel-item__media" width="100%" alt="{{ item.media_description }}"/>
       {% if item.media_description %}
         <p class="gallery-carousel-item__text">{{ item.media_description }}</p>
       {% endif %}
@@ -38,7 +38,7 @@
 
   {% for item in carousel_nav_items %}
     <li class="gallery-carousel__nav-item">
-     <img src="{{ item.media_thumb }}" alt="{{ item.media_thumb_description }}"/>
+     <img src="{{ item.media_thumb }}" alt="{{ item.media_thumb_description }}" width="100%" />
     </li>
   {% endfor %}
 

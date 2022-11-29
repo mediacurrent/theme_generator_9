@@ -31,7 +31,7 @@ LatestNews.args = {
         "modifier": "horizontal",
         "media": {
           "video": "",
-          "image": "<img src='https://source.unsplash.com/PhYq704ffdA/640x360' alt='test image' />",
+          "image": "<img src='./images/gallery7.jpg' width='100%' alt='test image' />",
           "caption": ""
         },
         "eyebrow": {

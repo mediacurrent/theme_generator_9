@@ -18,7 +18,7 @@ export const Hero = HeroTemplate.bind({});
 Hero.args = {
   "hero": {
     "media": {
-      "image": "<img src='https://source.unsplash.com/FIKD9t5_5zQ/1400x787' alt='test image' />"
+      "image": "<img src='./images/gallery7.jpg' width='100%' alt='test image' />"
     },
     "eyebrow": {
       "text": "Subhead Could Be Here",
