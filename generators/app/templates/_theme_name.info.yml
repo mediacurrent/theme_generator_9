@@ -13,7 +13,7 @@ name: <%= themeName %>
 type: theme
 description: <%= themeDesc %>
 package: Other
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 # Classy vs. Stable as a base theme: https://www.lullabot.com/articles/a-tale-of-two-base-themes-in-drupal-8-core
 base theme: <%= baseTheme %>
 
