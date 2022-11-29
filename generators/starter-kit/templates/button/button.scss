@@ -5,11 +5,11 @@
 // Import site utilities.
 @import '../../global/utils/init';
 
-.button__container {
+.btn__container {
   margin-top: 30px;
 }
 
-.button,
+.btn,
 input[type='submit'] {
   background-color: $color-blue;
   border: 2px solid $color-blue;
@@ -32,7 +32,7 @@ input[type='submit'] {
     padding: 1rem 2rem;
   }
 
-  &.button--small {
+  &.btn--small {
     font-size: 0.875rem;
     padding: 0.5rem 1rem;
   }
